@@ -1,14 +1,13 @@
 import React from 'react';
-import { DisplayCase } from '../components/Display/Display'
+import { Slider } from '../components/Slider/Slider'
 import { NovelRelease } from '../components/NovelRelease/NovelRelease'
 
 import '../styles/home.scss';
-
 export function Home() {
   return(
     <main className="homeContainer">
       <div className="homeDisplay">
-        <DisplayCase />
+        <Slider />
         <NovelRelease />
       </div>
     </main>
