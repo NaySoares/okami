@@ -7,7 +7,6 @@ export function Slider() {
   const [slideIndex, setSlideIndex] = useState(1)
 
   const nextSlide = () => {
-    console.log("chegou", slideIndex)
     if(slideIndex !== SliderData.length){
       setSlideIndex(slideIndex + 1)
       console.log(slideIndex)
@@ -16,9 +15,6 @@ export function Slider() {
     }
   }
 
-  const moveDot = (index: number) => {
-    setSlideIndex(index)
-  }
   const prevSlide = () => {
     if(slideIndex !== 1){
       setSlideIndex(slideIndex - 1)
@@ -27,16 +23,31 @@ export function Slider() {
     }
   }
 
+  const moveDot = (index: number) => {
+    setSlideIndex(index)
+  }
+
+  const nav = (index: number) => {
+    alert(`você será enviado pra página do index: ${index}`)
+  }
   return(
     <div className="container-slider">
       {SliderData.map((slide, index)=> {
         return(
           <div
           key={index}
+          onClick={() => nav(slideIndex)}
           className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
           >
             {slideIndex === index + 1 && (
-              <img src={slide.img} alt="image do slide" />
+              <>
+                <img src={slide.img} alt="image do slide" />
+                <div className="infosSlider">
+                  <strong>{slide.title}</strong>
+                  <p>{slide.message}</p>
+                  <a href="#" className="linkSlide">Ler Agora</a>
+                </div>
+              </>
             )}
           </div>
         )
