@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./header.scss";
 import menuDark from "../../assets/icons/iconMenuDark.svg";
-import menuLight from "../../assets/icons/iconMenuLight.svg";
+//import menuLight from "../../assets/icons/iconMenuLight.svg";
 import searchDark from "../../assets/icons/iconSearchLight.svg";
-import notificationDark from "../../assets/icons/iconNotificationDark.svg";
 import userLoginDark from "../../assets/icons/iconUserLoginDark.svg";
 import themeDark from "../../assets/icons/iconThemeDark.svg";
 
