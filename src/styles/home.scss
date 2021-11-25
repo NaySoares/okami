@@ -9,20 +9,33 @@ main.homeContainer{
   padding-right: 24px;
   padding-left: 24px;
 
-  div.homeDisplay{
+  section.homeDisplay{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
   }
+
+  section.homeBlog{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
 }
 
 @media (max-width: 1180px){
   main.homeContainer{
-    div.homeDisplay{
+    section.homeDisplay{
       display: flex;
       flex-direction: column;
       align-items: center;
    }
+   section.homeBlog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
   }
 }
