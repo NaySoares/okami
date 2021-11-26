@@ -23,6 +23,12 @@ main.homeContainer{
     justify-content: space-around;
   }
   
+  section.homeBook{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
 
 @media (max-width: 1300px){
