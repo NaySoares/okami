@@ -15,14 +15,16 @@ export function TopPost() {
         {TopPostData.map((obj) => {
           return (
             <div className="releaseWorkPost" key={obj.id}>
-            <div className="releaseContentRowPost" onClick={() => nav(obj.id)}>
-              <img src={obj.img} alt="Capa do Post" className="releaseImgPost" />
-              <div className="releaseInfoPost">
-                <strong className="releaseTPost">{obj.title}</strong>
-                <p className="releasePPost">{obj.date}</p>
-              </div>
+              {obj.statusTop &&
+                <div className="releaseContentRowPost" onClick={() => nav(obj.id)}>
+                  <img src={obj.img} alt="Capa do Post" className="releaseImgPost" />
+                  <div className="releaseInfoPost">
+                    <strong className="releaseTPost">{obj.title}</strong>
+                    <p className="releasePPost">{obj.date}</p>
+                  </div>
+                </div>
+              }
             </div>
-          </div>
           )
         })}
       </div>

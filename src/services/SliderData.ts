@@ -1,6 +1,6 @@
-import slide01 from "../../assets/images/carousel-01.jpg";
-import slide02 from "../../assets/images/carousel-02.jpg";
-import slide03 from "../../assets/images/carousel-03.jpg";
+import slide01 from "../assets/images/carousel-01.jpg";
+import slide02 from "../assets/images/carousel-02.jpg";
+import slide03 from "../assets/images/carousel-03.jpg";
 
 interface SliderProps {
   id: number;

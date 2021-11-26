@@ -1,0 +1,110 @@
+div.cardPostContainer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width:100%;
+  max-width: 870px;
+  height: 100%;
+  max-height: 489.375px;
+  margin: 30px;
+
+  header.cardPostHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px;
+    padding-bottom: 1px;
+    margin-bottom: 0;
+  }
+
+  div.cardPostContent{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 0px 0px 0px;
+    margin-top: 0;
+
+    div.cardPost{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 400px;
+      height: 100%;
+      max-height: 440px;
+      border-radius: 15px;
+      background: var(--dk-detail);
+      padding: 15px;
+      padding-bottom: 10px;
+      margin: 20px;
+      margin-top: 0;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      text-overflow: ellipsis;
+      overflow: hidden;
+      .cardPostImg{
+        width: 100%;
+        max-width: 380px;
+        height: 100%;
+        max-height: 180px;
+        border-radius: 6px;
+      }
+      .cardPostDate{
+        color: var(--dk-description);
+        font-size: 14px;
+        margin-top: 5px;
+      }
+      .cardPostTitle{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 22px;
+        color: var(--dk-title);
+      }
+      .cardPostDescription{
+        color: var(--dk-description);
+        text-overflow: ellipsis;
+      }
+
+      .cardPostFooter{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 15px;
+        .cardPostAvatar{
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 7px;
+        }
+        .cardPostAuthorName{
+          color: var(--dk-title)
+        }
+      }
+    }
+
+    div.cardPost:first-child{
+      margin-left: 0;
+    }
+    div.cardPost:last-child{
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 1205px){
+  div.cardPost{
+    min-height: 440px;
+    .cardPostDate{
+      display: none;
+    }
+    .cardPostTitle{
+      font-size: 18px;
+    }
+  }
+}

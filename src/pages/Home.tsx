@@ -2,6 +2,7 @@ import React from 'react';
 import { Slider } from '../components/Slider/Slider';
 import { NovelRelease } from '../components/NovelRelease/NovelRelease';
 import { TopPost } from '../components/TopPost/TopPost';
+import { CardPost } from '../components/CardPost/CardPost';
 
 import '../styles/home.scss';
 export function Home() {
@@ -12,7 +13,7 @@ export function Home() {
         <NovelRelease />
       </section>
       <section className="homeBlog">
-        <Slider />
+        <CardPost />
         <TopPost />
       </section>
     </main>
