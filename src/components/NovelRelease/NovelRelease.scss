@@ -64,19 +64,17 @@ div.releaseContainer{
     font-size: 22px;
   }
 }
-@media (max-width: 1180px){
+@media (max-width: 1300px){
   div.releaseContainer{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     height: 240px;
     width: 100%;
-    max-width: 870px;
-    
+    max-width: 870px;  
     .releaseTitle{
       margin-bottom: 10px;
     }
-
     div.releaseContent{
       display: flex;
       flex-direction: row;
@@ -84,7 +82,6 @@ div.releaseContainer{
       margin-top: 0;
       width: 100%;
       padding: 15px;
-
       .releaseInfo{
         display: flex;
         flex-direction:column;
@@ -99,11 +96,9 @@ div.releaseContainer{
 
 @media (max-width: 720px){
   div.releaseContainer{
-    
     .releaseTitle{
       margin-bottom: 10px;
     }
-
     div.releaseContent{
       display: flex;
       flex-direction: row;

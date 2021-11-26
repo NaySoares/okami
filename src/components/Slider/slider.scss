@@ -1,5 +1,6 @@
 .container-slider {
-  width: 870px;
+  width: 100%;
+  max-width: 870px;
   height: 489.375px;
   margin: 30px;
   position: relative;
@@ -46,6 +47,7 @@
     margin-bottom: 25px;
     font-weight: bold;
     user-select: none;
+    margin-right: 30px;
   }
 
   a.linkSlide{
