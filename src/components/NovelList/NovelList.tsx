@@ -24,7 +24,7 @@ export function NovelList() {
           return(
             <>
               {obj.statusTop && 
-                <div className="cardNovelList" key={obj.id}>
+                <div className="cardNovelList" key={obj.id} onClick={() => nav(obj.id)}>
                   <img src={obj.img} alt="Imagem do Post" />
                   <footer className="cardNovelListFooter">
                     <h2 className="cardPostTitle">{obj.title}</h2>
