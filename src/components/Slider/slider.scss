@@ -112,18 +112,3 @@
 .bott {
   position: absolute;
 }
-
-.nextSlide{
-  position: absolute;
-  right: 0 + -20px;
-  top: 50%;
-  cursor: pointer;
-  z-index: 10;
-}
-.prevSlide{
-  position: absolute;
-  left: 0 + -20px;
-  top: 50%;
-  cursor: pointer;
-  z-index: 10;
-}

@@ -44,7 +44,7 @@ export const TopPostData: TopPostProps[] = [
     author: "Plon",
     imgAuthor: "Plon",
     statusTop: true,
-    statusCard: false,  
+    statusCard: true,  
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ export const TopPostData: TopPostProps[] = [
     author: "Axios",
     imgAuthor: "Axios",
     statusTop: true,
-    statusCard: false,
+    statusCard: true,
   },
   {
     id: 7,

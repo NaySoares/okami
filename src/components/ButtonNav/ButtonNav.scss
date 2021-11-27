@@ -1,0 +1,14 @@
+.nextSlide{
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+.prevSlide{
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  cursor: pointer;
+  z-index: 10;
+}

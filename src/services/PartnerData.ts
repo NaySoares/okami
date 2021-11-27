@@ -14,18 +14,18 @@ export const PartnerData: PartnerData[] = [
     id: 17,
     img: cover01,
     title: "Pleiades Translations",
-    link: "#",
+    link: "#foo",
   },
   {
     id: 18,
     img: cover02,
     title: "3 Lobos",
-    link: "#",
+    link: "#foo",
   },
   {
     id: 19,
     img: cover03,
     title: "Reborn Scan",
-    link: "#",
+    link: "#foo",
   },
 ]

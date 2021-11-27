@@ -15,7 +15,7 @@ export function NovelList() {
     <div className="novelListContainer">
       <header className="novelListHeader">
         <h2>Light Novels</h2>
-        <a href='#'>
+        <a href='#foo'>
           <strong>{textButton}</strong>
         </a>
       </header>

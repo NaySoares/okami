@@ -6,30 +6,30 @@ import './Footer.scss'
 
 export function Footer() {
   return(
-    <footer className="mainFooter">
+    <footer id="foo" className="mainFooter">
       <section className="socialFooter">
-        <a href="#">
+        <a href="#foo">
           <img src={discordDark} alt="Icone do Discord" />
         </a>
-        <a href="#">
+        <a href="#foo">
           <img src={facebookDark} alt="Icone do Facebook" />
         </a>
-        <a href="#">
+        <a href="#foo">
           <img src={twitterDark} alt="Icone do Twitter" />
         </a>
       </section>
       <ul className="menuFooter">
         <li>
-          <a href="#">Light Novel</a>
+          <a href="#foo">Light Novel</a>
         </li>
         <li>
-          <a href="#">Blog</a>
+          <a href="#foo">Blog</a>
         </li>
         <li>
-          <a href="#">Equipe</a>
+          <a href="#foo">Equipe</a>
         </li>
         <li>
-          <a href="#">Apoio</a>
+          <a href="#foo">Apoio</a>
         </li>
       </ul>
       <strong>Copyright © 2021 Okami</strong>

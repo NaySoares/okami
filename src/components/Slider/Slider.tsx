@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import arrowL from '../../assets/icons/iconArrowL.svg';
-import arrowR from '../../assets/icons/iconArrowR.svg';
-import { SliderData } from "../../services/SliderData";
+import { SliderData } from '../../services/SliderData';
+import { ButtonNav } from '../ButtonNav/ButtonNav';
 
 import './slider.scss'
 
@@ -55,7 +54,7 @@ export function Slider() {
                 <div className="infosSlider">
                   <strong>{slide.title}</strong>
                   <p>{slide.message}</p>
-                  <a href="#" className="linkSlide">Ler Agora</a>
+                  <a href="#foo" className="linkSlide">Ler Agora</a>
                 </div>
               </>
             )}
@@ -71,20 +70,8 @@ export function Slider() {
           </div>
         ))}
       </div>
-      <div className="nextSlide">
-        <img
-          src={arrowR}
-          alt="Seta de Navegação"
-          onClick={() => nextSlide()}
-        />
-      </div>
-      <div className="prevSlide">
-        <img
-          src={arrowL}
-          alt="Seta de Navegação"
-          onClick={() => prevSlide()}
-        />
-      </div>
+      <ButtonNav direction={true} fun={nextSlide} />
+      <ButtonNav direction={false} fun={prevSlide} />
     </div>
   )
 }

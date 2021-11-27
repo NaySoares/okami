@@ -11,7 +11,7 @@ export function CardPartner() {
     <div className="partnerContainer">
       <header className="partnerHeader">
         <h2>Parceiros</h2>
-        <a href='#'>
+        <a href='#foo'>
           <strong>{textButton}</strong>
         </a>
       </header>
@@ -21,7 +21,7 @@ export function CardPartner() {
             <div className="cardPartner" key={obj.id}>
               <img src={obj.img} alt="Imagem do Post" />
               <h2 className="cardPartnerTitle">{obj.title}</h2>
-              <a className="cardPartnerLink" href="#">Conhecer Parceiro</a>
+              <a className="cardPartnerLink" href="#foo">Conhecer Parceiro</a>
             </div>
           )
         }))}

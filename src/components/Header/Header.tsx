@@ -17,7 +17,7 @@ export function Header() {
         <h2 className="headerTitle3">Novels</h2>
       </button>
       <button className="btnHeaderMenu">
-        <img className="headerMenu" src={menuDark} alt="Icone menu" />
+        <img className="headerMenu" src={menuDark} alt="Icone menu" onClick={() => setUserLogged(!userLogged)}/>
       </button>
 
       <label className="inputGroup">
