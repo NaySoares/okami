@@ -1,14 +1,15 @@
-div.cardPostContainer{
+.cardPostContainer{
   display: flex;
   align-items: center;
   flex-direction: column;
   width:100%;
   max-width: 870px;
   height: 100%;
-  max-height: 489.375px;
+  max-height: 510px;
   margin: 30px;
-
-  header.cardPostHeader{
+  position: relative;
+ 
+  header{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,24 +17,44 @@ div.cardPostContainer{
     width: 100%;
     padding: 5px;
     padding-bottom: 1px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
 
   .cardPostContent{
+    position: relative;
     display: flex;
     flex: 1;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
+    max-width: 5000px;
+    height: 100%;
+    max-height: 480px;
     padding: 15px 0px 0px 0px;
-    margin-top: 0;
+    top: 0;
+    overflow: hidden;
+    
+    .windowView{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      max-width: 870px;
+      height: 490px;
+      overflow-y: none;
+      transition: all 1.5s;
+   
+    }
+    .windowView::-webkit-scrollbar {
+      display: none;
+    }
 
     .cardPost{
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       width: 100%;
+      min-width: 400px;
       max-width: 400px;
       height: 100%;
       max-height: 440px;
@@ -41,10 +62,8 @@ div.cardPostContainer{
       background: var(--dk-detail);
       padding: 15px;
       padding-bottom: 10px;
-      margin: 20px;
-      margin-top: 0;
+      margin: 5px 20px 20px 20px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-      text-overflow: ellipsis;
       overflow: hidden;
       .cardPostImg{
         width: 100%;
@@ -68,13 +87,6 @@ div.cardPostContainer{
         color: var(--dk-description);
         text-overflow: ellipsis;
       }
-    }
-
-    div.cardPost:first-child{
-      margin-left: 0;
-    }
-    div.cardPost:last-child{
-      margin-right: 0;
     }
   }
   .cardPostFooter{

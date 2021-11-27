@@ -1,39 +1,76 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { RandomAvatar } from '../../services/RandomAvatar'
+import { ButtonNav } from '../ButtonNav/ButtonNav';
 
 import { TopPostData } from '../../services/TopPostData';
 import './CardPost.scss'
 
 export function CardPost() {
-  
+  const [roll, setRoll] = useState(0);
   const textButton = "Ver Mais >";
+  
+  var lengthPost = 0
+  function contPost(){
+    TopPostData.forEach(ready => {
+      if(ready.statusCard === true){
+        lengthPost++
+      }
+    })
 
+    if(lengthPost%2 === 0){
+      lengthPost = lengthPost/2;
+    } else {
+      lengthPost = ((lengthPost-1)/2)+1
+    }
+  }
+  contPost();
+  
+  const nextPost = () => {
+    if(roll !== 890*lengthPost){
+      const incrementRoll = Number(roll)+890;
+      setRoll(incrementRoll)
+    }else{
+      setRoll(0)
+    }
+  }
+
+  const prevPost = () => {
+    if(roll !== 0){
+      const decrementRoll = Number(roll)-890;
+      setRoll(decrementRoll)
+    }else {
+      return
+    }
+  }
+  
   return(
     <div className="cardPostContainer">
-      <header className="cardPostHeader">
+      <header>
         <h2>Blog Tsun</h2>
-        <a href='#'>
+        <a href='#foo'>
           <strong>{textButton}</strong>
         </a>
       </header>
+        <ButtonNav direction={true} fun={nextPost} />
+        <ButtonNav direction={false} fun={prevPost} />
       <div className="cardPostContent">
-        {TopPostData.map((obj => {
-          return(
-            <>
-              {obj.statusCard && 
-                <div className="cardPost" key={obj.id}>
-                  <img src={obj.img} alt="Imagem do Post" className="cardPostImg" />
-                  <p className="cardPostDate">{obj.date}</p>
-                  <h2 className="cardPostTitle">{obj.title}</h2>
-                  <p className="cardPostDescription">{obj.description}</p>
-                  <footer className="cardPostFooter">
-                    <img src={obj.imgAuthor} alt="Avatar do Autor" />
-                    <strong>{obj.author}</strong>
-                  </footer>
-                </div>
-              }
-            </>
-          )
-        }))}
+        <div className="windowView" style={{marginLeft: `-${roll}px`}}>
+          {TopPostData.map((obj => {
+            if(obj.statusCard){
+            return(
+              <div className="cardPost" key={obj.id} >
+                <img src={obj.img} alt="Imagem do Post" className="cardPostImg" />
+                <p className="cardPostDate">{obj.date}</p>
+                <h2 className="cardPostTitle">{obj.title}</h2>
+                <p className="cardPostDescription">{obj.description}</p>
+                <footer className="cardPostFooter">
+                  <RandomAvatar />
+                  <strong>{obj.author}</strong>
+                </footer> 
+              </div>
+            )
+          }}))}
+        </div>
       </div>
     </div>
   )
