@@ -3,10 +3,6 @@ import React from 'react';
 import { PartnerData } from '../../services/PartnerData';
 import './CardPartner.scss'
 
-const nav = (id: number) => {
-  alert(`você será navegado para o id: ${id}`)
-}
-
 export function CardPartner() {
   
   const textButton = "Ver Mais >";
@@ -25,7 +21,7 @@ export function CardPartner() {
             <div className="cardPartner" key={obj.id}>
               <img src={obj.img} alt="Imagem do Post" />
               <h2 className="cardPartnerTitle">{obj.title}</h2>
-              <a className="cardPartnerLink" href={obj.link}>Conhecer Parceiro</a>
+              <a className="cardPartnerLink" href="#">Conhecer Parceiro</a>
             </div>
           )
         }))}

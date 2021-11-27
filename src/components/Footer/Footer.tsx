@@ -6,7 +6,7 @@ import './Footer.scss'
 
 export function Footer() {
   return(
-    <footer>
+    <footer className="mainFooter">
       <section className="socialFooter">
         <a href="#">
           <img src={discordDark} alt="Icone do Discord" />

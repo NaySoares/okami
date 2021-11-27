@@ -19,7 +19,7 @@ div.cardPostContainer{
     margin-bottom: 0;
   }
 
-  div.cardPostContent{
+  .cardPostContent{
     display: flex;
     flex: 1;
     flex-direction: row;
@@ -29,7 +29,7 @@ div.cardPostContainer{
     padding: 15px 0px 0px 0px;
     margin-top: 0;
 
-    div.cardPost{
+    .cardPost{
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -68,24 +68,6 @@ div.cardPostContainer{
         color: var(--dk-description);
         text-overflow: ellipsis;
       }
-
-      .cardPostFooter{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        width: 100%;
-        margin-top: 15px;
-        .cardPostAvatar{
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          margin-right: 7px;
-        }
-        .cardPostAuthorName{
-          color: var(--dk-title)
-        }
-      }
     }
 
     div.cardPost:first-child{
@@ -93,6 +75,24 @@ div.cardPostContainer{
     }
     div.cardPost:last-child{
       margin-right: 0;
+    }
+  }
+  .cardPostFooter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 10px;
+    img{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 7px;
+      margin-bottom: 7px;
+    }
+    strong{
+      color: var(--dk-title)
     }
   }
 }

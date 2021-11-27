@@ -3,10 +3,6 @@ import React from 'react';
 import { TopPostData } from '../../services/TopPostData';
 import './CardPost.scss'
 
-const nav = (id: number) => {
-  alert(`você será navegado para o id: ${id}`)
-}
-
 export function CardPost() {
   
   const textButton = "Ver Mais >";
@@ -30,8 +26,8 @@ export function CardPost() {
                   <h2 className="cardPostTitle">{obj.title}</h2>
                   <p className="cardPostDescription">{obj.description}</p>
                   <footer className="cardPostFooter">
-                    <img src={obj.imgAuthor} alt="Avatar do Autor" className="cardPostAvatar" />
-                    <strong className="cardPostAuthorName">{obj.author}</strong>
+                    <img src={obj.imgAuthor} alt="Avatar do Autor" />
+                    <strong>{obj.author}</strong>
                   </footer>
                 </div>
               }
