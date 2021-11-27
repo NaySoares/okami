@@ -29,6 +29,14 @@ main.homeContainer{
     align-items: center;
     justify-content: space-around;
   }
+
+  section.homePartner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top:80px;
+  }
 }
 
 @media (max-width: 1300px){

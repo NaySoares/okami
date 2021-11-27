@@ -4,6 +4,7 @@ import { NovelRelease } from '../components/NovelRelease/NovelRelease';
 import { TopPost } from '../components/TopPost/TopPost';
 import { CardPost } from '../components/CardPost/CardPost';
 import { NovelList } from '../components/NovelList/NovelList';
+import { CardPartner } from '../components/CardPartner/CardPartner';
 
 import '../styles/home.scss';
 export function Home() {
@@ -19,6 +20,9 @@ export function Home() {
       </section>
       <section className="homeBook">
         <NovelList />
+      </section>
+      <section className="homePartner">
+        <CardPartner />
       </section>
     </main>
   )
