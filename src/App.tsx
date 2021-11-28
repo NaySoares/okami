@@ -1,15 +1,17 @@
 import React from 'react';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
-import { Home } from './pages/Home';
+import { Routers } from './Router';
+import { BrowserRouter as Router } from "react-router-dom";
+
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
-      <Home />
+      <Routers />
       <Footer />
-    </>
+    </Router>
   );
 }
 
