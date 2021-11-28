@@ -1,7 +1,7 @@
 import React from 'react';
 import { Slider } from '../components/Slider/Slider';
 import { NovelRelease } from '../components/NovelRelease/NovelRelease';
-import { TopPost } from '../components/TopPost/TopPost';
+import { DynamicCard } from '../components/TopPost/DynamicCard';
 import { CardPost } from '../components/CardPost/CardPost';
 import { NovelList } from '../components/NovelList/NovelList';
 import { CardPartner } from '../components/CardPartner/CardPartner';
@@ -16,7 +16,7 @@ export function Home() {
       </section>
       <section className="homeBlog">
         <CardPost />
-        <TopPost />
+        <DynamicCard />
       </section>
       <section className="homeBook">
         <NovelList />

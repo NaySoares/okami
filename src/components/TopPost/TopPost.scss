@@ -1,4 +1,4 @@
-div.releaseContainerPost{
+div.releaseContainerPost {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -11,60 +11,58 @@ div.releaseContainerPost{
   background: var(--dk-detail);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 
-  .releaseTitlePost{
+  h2 {
     margin-top: 10px;
   }
+}
+.releaseContentPost {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 15px;
+  min-height: 489.375px;
+}
+.releaseContentRowPost {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  cursor: pointer;
 
-  div.releaseContentPost{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 15px;
-    min-height: 489.375px;
-
-    div.releaseContentRowPost{
-      display: flex;
-      flex-direction: row;
-      margin-top: 20px;
-      cursor: pointer;
-
-      .releaseImgPost{
-        width:80px;
-        height:70px;
-        min-width: 80px;
-        min-width: 70px;
-        border-radius: 6px;
-      }
-
-      .releaseInfoPost{
-        display: flex;
-        flex-direction:column;
-        margin-left: 15px;
-        padding-left: 5px;
-        padding-right: 5px;
-
-        .releaseTPost{
-          margin-bottom: 5px;
-          font-size: 17px;
-          text-overflow: ellipsis;
-        }
-
-        .releasePPost{
-          font-size: 12px;
-          margin-bottom: 5px;
-          text-overflow: ellipsis;
-          color: var(--dk-description);
-        }
-      }
-    }
+  img {
+    width: 80px;
+    height: 70px;
+    min-width: 80px;
+    min-width: 70px;
+    border-radius: 6px;
   }
-  div.releaseContentPost:first-child{
-    margin-top: 0;
+}
+.releaseInfoPost {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  strong {
+    margin-bottom: 5px;
+    font-size: 17px;
+    text-overflow: ellipsis;
+  }
+
+  p {
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-overflow: ellipsis;
+    color: var(--dk-description);
   }
 }
 
-@media (max-width: 1300px){
-  div.releaseContainerPost{
+div.releaseContentPost:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 1300px) {
+  div.releaseContainerPost {
     display: none;
   }
 }

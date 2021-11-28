@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { TopPostData } from '../../services/TopPostData';
 import './TopPost.scss'
 
@@ -17,10 +15,10 @@ export function TopPost() {
             <div className="releaseWorkPost" key={obj.id}>
               {obj.statusTop &&
                 <div className="releaseContentRowPost" onClick={() => nav(obj.id)}>
-                  <img src={obj.img} alt="Capa do Post" className="releaseImgPost" />
+                  <img src={obj.img} alt="Capa do Post" />
                   <div className="releaseInfoPost">
-                    <strong className="releaseTPost">{obj.title}</strong>
-                    <p className="releasePPost">{obj.date}</p>
+                    <strong>{obj.title}</strong>
+                    <p>{obj.date}</p>
                   </div>
                 </div>
               }
