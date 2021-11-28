@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+import { ButtonNav } from '../ButtonNav/ButtonNav';
 import { NovelData } from '../../services/NovelData';
 import './NovelList.scss'
 
@@ -8,8 +9,42 @@ const nav = (id: number) => {
 }
 
 export function NovelList() {
-  
+  const [rollNovel, setRollNovel] = useState(0);
   const textButton = "Ver Mais >";
+  
+  var lengthNovel = 0
+  function contPost(){
+    NovelData.forEach(ready => {
+      if(ready.statusTop === true){
+        lengthNovel++
+      }
+    })
+
+    if(lengthNovel%2 === 0){
+      lengthNovel = (lengthNovel/2)-1;
+    } else {
+      lengthNovel = ((lengthNovel-1)/2);
+    }
+  }
+  contPost();
+  
+  const nextPost = () => {
+    if(rollNovel !== 320*lengthNovel){
+      const incrementRoll = Number(rollNovel)+320;
+      setRollNovel(incrementRoll)
+    }else{
+      setRollNovel(0)
+    }
+  }
+
+  const prevPost = () => {
+    if(rollNovel !== 0){
+      const decrementRoll = Number(rollNovel)-320;
+      setRollNovel(decrementRoll)
+    }else {
+      return
+    }
+  }
 
   return(
     <div className="novelListContainer">
@@ -19,7 +54,10 @@ export function NovelList() {
           <strong>{textButton}</strong>
         </a>
       </header>
+      <ButtonNav direction={true} fun={nextPost} />
+      <ButtonNav direction={false} fun={prevPost} />
       <div className="novelListContent">
+      <div className="windowViewNovel" style={{marginLeft: `-${rollNovel}px`}}>
         {NovelData.map((obj => {
           return(
             <>
@@ -36,6 +74,7 @@ export function NovelList() {
             </>
           )
         }))}
+      </div>
       </div>
     </div>
   )
