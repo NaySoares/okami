@@ -20,10 +20,14 @@ export function NovelList() {
       }
     })
 
-    if(lengthNovel%2 === 0){
-      lengthNovel = (lengthNovel/2)-1;
+    if(lengthNovel > 4){
+      if(lengthNovel%2 === 0){
+        lengthNovel = (lengthNovel/2)-1;
+      } else {
+        lengthNovel = ((lengthNovel-1)/2);
+      }
     } else {
-      lengthNovel = ((lengthNovel-1)/2);
+      lengthNovel = 0;
     }
   }
   contPost();

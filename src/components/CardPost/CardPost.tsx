@@ -17,10 +17,14 @@ export function CardPost() {
       }
     })
 
-    if(lengthPost%2 === 0){
-      lengthPost = lengthPost/2;
+    if(lengthPost > 2){
+      if(lengthPost%2 === 0){
+        lengthPost = (lengthPost/2)-1;
+      } else {
+        lengthPost = ((lengthPost-1)/2)
+      }
     } else {
-      lengthPost = ((lengthPost-1)/2)+1
+      lengthPost = 0;
     }
   }
   contPost();
