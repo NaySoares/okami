@@ -1,0 +1,17 @@
+.dynamicCard {
+  display: flex;
+  flex-direction: column;
+  height: 489.375px;
+  width: 270px;
+
+  border-radius: 15px;
+  position: relative;
+}
+
+.cardFlip{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+}

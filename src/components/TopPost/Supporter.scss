@@ -5,13 +5,14 @@
   height: 489.375px;
   width: 270px;
 
-  margin: 20px;
   padding: 15px;
   border-radius: 15px;
   background: var(--dk-detail);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-
+  position: absolute;
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
   h2 {
     margin-top: 10px;
     align-self: flex-start;

@@ -8,7 +8,7 @@ const nav = () => {
 
 export function Supporter() {
   return( 
-    <div className="supportContainer" onClick={() => nav}>
+    <div className="supportContainer" onClick={() => nav()}>
       <h2>Apoiadores</h2>
       <div className="supportContent">
         {SupporterData.map((obj) => {

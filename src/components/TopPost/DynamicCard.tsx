@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { Supporter } from './Supporter';
 import { TopPost } from './TopPost';
+import './DynamicCard.scss';
 
 export function DynamicCard() {
   const [card, setCard] = useState(false);
@@ -12,11 +13,15 @@ export function DynamicCard() {
 
   setTimeout(() =>{
     flip();
-  }, 3000);
+  }, 5000);
 
   return(
-    <>
-      {card ? <Supporter/> : <TopPost/>}
-    </>
+    <div className="dynamicCard">
+      <div className="cardFlip" style={card ? {transform: "rotateY(180deg)"} : {transform: "rotateY(0)"}}>
+        <TopPost/>
+        <Supporter/>
+      </div>
+    </div>
   )
 }
+
