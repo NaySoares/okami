@@ -9,6 +9,7 @@ interface PartnerData {
   link: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 export const PartnerData: PartnerData[] = [
   {
     id: 17,
