@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router';
 import { ButtonNav } from '../ButtonNav/ButtonNav';
 import { NovelData } from '../../services/NovelData';
 import './NovelList.scss'
 
-const nav = (id: number) => {
-  alert(`você será navegado para o id: ${id}`)
-}
-
 export function NovelList() {
   const [rollNovel, setRollNovel] = useState(0);
   const textButton = "Ver Mais >";
+
+  const navigate = useNavigate();
+  
+  const nav = (id: number) => {
+    navigate(`/project/${id}`);
+  }  
+  
   
   var lengthNovel = 0
   function contPost(){
