@@ -5,14 +5,14 @@
   justify-content: center;
   width: 100%;
   max-width: 1480px;
-  margin: 16px auto 0 auto;
+  margin: 0 auto;
 }
 
 .projectContent {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+  align-items: flex-start;
+  justify-content: center;
   padding-right: 24px;
   padding-left: 24px;
 }

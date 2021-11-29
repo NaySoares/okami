@@ -1,10 +1,14 @@
-import bannerElaina from '../../../assets/banner/bannerMajoNoTabitabi.png'
+import bannerElaina from '../../../assets/banner/bannerMajoNoTabitabi.png';
 import './Banner.scss';
 
-export function Banner() {
+interface BannerProps{
+  currentBanner: string;
+}
+
+export function Banner({currentBanner}: BannerProps){
   return(
     <div className="bannerContainer">
-      <img src={bannerElaina} alt="Imagem da obra" />
+      <img src={currentBanner ? currentBanner : bannerElaina} alt="Imagem da obra" />
     </div>
   )
 }

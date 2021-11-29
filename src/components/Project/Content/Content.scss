@@ -1,0 +1,89 @@
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 700px;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  top: -130px;
+}
+
+.infoMain h2 {
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.subInfoMain {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 700px;
+  background-color: var(--dk-detail);
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.subInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  p {
+    color: var(--dk-description);
+    margin-bottom: 15px;
+  }
+}
+.subInfoMargin {
+  min-width: 140px;
+  margin-right: 20px;
+  strong {
+    color: var(--dk-title);
+    margin-bottom: 15px;
+  }
+}
+
+.infoResume h2 {
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.subinfoResume {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 700px;
+  background-color: var(--dk-detail);
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.subInfoResume{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  span {
+    color: var(--dk-description);
+    margin-bottom: 25px;
+  }
+
+  button{
+    font-weight: bold;
+    color: var(--dk-title);
+    border-radius: 10px;
+    border: 2px solid var(--dk-button);
+    background: transparent;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+  }
+  button:hover{
+    background: var(--dk-button);
+  }
+}

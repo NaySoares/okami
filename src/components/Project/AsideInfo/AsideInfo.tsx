@@ -1,28 +1,34 @@
-import coverElaina from '../../../assets/images/coverBruxaErranteV6.jpg'
 import upload from '../../../assets/icons/iconUploadDark.svg'
 import { RandomAvatar } from '../../../services/RandomAvatar';
 import { StaffData } from '../../../services/StaffData';
 import { YouTubePlayer } from '../YoutubePlayer/YoutubePlayer';
+import { NovelData } from '../../../services/NovelData';
 
 import  './AsideInfo.scss';
-export function AsideInfo() {
+interface currentProps{
+  currentId: number
+}
+
+export function AsideInfo({currentId} : currentProps){
+  const currentWork = NovelData.filter((obj) => obj.id === currentId);
   let randomNumber = Math.floor(Math.random()*StaffData.length);
   if(randomNumber === 0 ){
     randomNumber = 1;
   }
-  
+
   return(
     <aside className="asideContainer">
-      <img src={coverElaina} alt="Imagem Projeto" className="primaryImg"/>
+      <img src={currentWork[0].img} alt="Imagem Projeto" className="primaryImg"/>
       
+      {currentWork[0].extra && 
       <div className="asideExtra">
-        <h2>Conteúdo Extra</h2>
+        <h2>Conteúdo Extra</h2>      
         <div className="asideExtraContent">
-          <YouTubePlayer videoId={"L9RDSB7LrEI"} />
-          <strong>Trailer Ofícial do Anime</strong>
+          <YouTubePlayer videoId={currentWork[0].contentExtra} />
+          <strong>Trailer Oficial do Anime</strong>
         </div>
       </div>
-
+      }
       <div className="asideStaff">
         <h2>Equipe</h2>
         <div className="asideStaffContent">
