@@ -1,31 +1,37 @@
-import React, { useState } from "react";
-import "./header.scss";
+import { useState } from "react";
+import { useNavigate } from "react-router";
 import menuDark from "../../assets/icons/iconMenuDark.svg";
 //import menuLight from "../../assets/icons/iconMenuLight.svg";
 import searchDark from "../../assets/icons/iconSearchLight.svg";
 import userLoginDark from "../../assets/icons/iconUserLoginDark.svg";
 //import closeDark from "../../assets/icons/iconCloseDark.svg";
 import themeDark from "../../assets/icons/iconThemeDark.svg";
+import "./header.scss";
 
 export function Header() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [userLogged, setUserLogged] = useState(true);
-  const [activeMenu, setActiveMenu] = useState(-700)
+  const [activeMenu, setActiveMenu] = useState(-700);
+
+  const navigate = useNavigate();
+
+  const nav = () => {
+    navigate("/");
+  };
 
   const openModal = () => {
     activeMenu === -700 ? setActiveMenu(0) : setActiveMenu(-700);
-  }
-  
+  };
+
   return (
     <div className="headerContainer">
-      
-      <div className="modalMenuContainer" style={{left: `${activeMenu}%`}}>
+      <div className="modalMenuContainer" style={{ left: `${activeMenu}%` }}>
         <label className="labelModalMenu" onClick={() => openModal()}>
           <h2>Okami</h2>
           <h2 className="modalMenuDot">.</h2>
           <h2>Novels</h2>
           <h2 className="modalMenuClose">x</h2>
-         </label>
+        </label>
         <ul>
           <a href="foo">
             <li>Light Novel</li>
@@ -42,13 +48,13 @@ export function Header() {
         </ul>
       </div>
 
-      <button className="btnHeaderTitle">
+      <button className="btnHeaderTitle" onClick={() => nav()}>
         <h2>Okami</h2>
         <h2 className="headerDot">.</h2>
         <h2>Novels</h2>
       </button>
       <button className="btnHeaderMenu">
-        <img src={menuDark} alt="Icone menu" onClick={() => openModal()}/>
+        <img src={menuDark} alt="Icone menu" onClick={() => openModal()} />
       </button>
 
       <label className="inputGroup">
@@ -79,7 +85,11 @@ export function Header() {
         ) : (
           <>
             <button className="btnHeaderLogin">
-              <img className="headerLogin" src={userLoginDark} alt="Icone login"/>
+              <img
+                className="headerLogin"
+                src={userLoginDark}
+                alt="Icone login"
+              />
             </button>
           </>
         )}
