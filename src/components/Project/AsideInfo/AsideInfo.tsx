@@ -2,12 +2,10 @@ import coverElaina from '../../../assets/images/coverBruxaErranteV6.jpg'
 import upload from '../../../assets/icons/iconUploadDark.svg'
 import { RandomAvatar } from '../../../services/RandomAvatar';
 import { StaffData } from '../../../services/StaffData';
-
+import { YouTubePlayer } from '../YoutubePlayer/YoutubePlayer';
 
 import  './AsideInfo.scss';
-//360/540
 export function AsideInfo() {
-
   let randomNumber = Math.floor(Math.random()*StaffData.length);
   if(randomNumber === 0 ){
     randomNumber = 1;
@@ -20,7 +18,7 @@ export function AsideInfo() {
       <div className="asideExtra">
         <h2>Conteúdo Extra</h2>
         <div className="asideExtraContent">
-          <img src={coverElaina} alt="mídia extra" />
+          <YouTubePlayer videoId={"L9RDSB7LrEI"} />
           <strong>Trailer Ofícial do Anime</strong>
         </div>
       </div>
