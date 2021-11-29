@@ -1,10 +1,18 @@
 import coverElaina from '../../../assets/images/coverBruxaErranteV6.jpg'
-import upload from '../../../assets/icons/iconMenuDark.svg'
+import upload from '../../../assets/icons/iconUploadDark.svg'
 import { RandomAvatar } from '../../../services/RandomAvatar';
+import { StaffData } from '../../../services/StaffData';
+
 
 import  './AsideInfo.scss';
 //360/540
 export function AsideInfo() {
+
+  let randomNumber = Math.floor(Math.random()*StaffData.length);
+  if(randomNumber === 0 ){
+    randomNumber = 1;
+  }
+  
   return(
     <aside className="asideContainer">
       <img src={coverElaina} alt="Imagem Projeto" className="primaryImg"/>
@@ -20,15 +28,18 @@ export function AsideInfo() {
       <div className="asideStaff">
         <h2>Equipe</h2>
         <div className="asideStaffContent">
-          <div className="member">
-            <RandomAvatar />
-            <div className="memberInfo">
-              <strong>Axios</strong>
-              <p>Editor</p>
+          {StaffData.slice(0, randomNumber).map((obj => {
+            return(
+            <div className="member">
+              <RandomAvatar />
+              <div className="memberInfo">
+                <strong>{obj.nick}</strong>
+                <p>{obj.category[0]}</p>
+              </div>
+              <strong>{obj.up.majoNoTabitabi}</strong>
+              <img src={upload} alt="icone de up" className="IconUpload" />
             </div>
-            <strong>8</strong>
-            <img src={upload} alt="icone de up" className="IconUpload" />
-          </div>
+          )}))}
         </div>
       </div>
 

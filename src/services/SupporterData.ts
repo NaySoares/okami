@@ -9,6 +9,7 @@ interface SupporterData {
   finish: string[];
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 export const SupporterData: SupporterData[] = [
   {
     id: 22,

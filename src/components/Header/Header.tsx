@@ -4,10 +4,11 @@ import menuDark from "../../assets/icons/iconMenuDark.svg";
 //import menuLight from "../../assets/icons/iconMenuLight.svg";
 import searchDark from "../../assets/icons/iconSearchLight.svg";
 import userLoginDark from "../../assets/icons/iconUserLoginDark.svg";
-import closeDark from "../../assets/icons/iconCloseDark.svg";
+//import closeDark from "../../assets/icons/iconCloseDark.svg";
 import themeDark from "../../assets/icons/iconThemeDark.svg";
 
 export function Header() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [userLogged, setUserLogged] = useState(true);
   const [activeMenu, setActiveMenu] = useState(-700)
 
