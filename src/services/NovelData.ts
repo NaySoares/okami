@@ -24,6 +24,18 @@ interface NovelDataProps {
   extra: boolean;
   contentExtra: string;
   banner?: string;
+  view?: boolean;
+  volume: VolumeProps[];
+}
+interface ChapterProps{
+  id: number,
+  number: number,
+  title: string,
+  release: string,
+}
+interface VolumeProps{
+  number: number,
+  chapter: ChapterProps[];
 }
 
 export const NovelData: NovelDataProps[] = [
@@ -51,6 +63,42 @@ export const NovelData: NovelDataProps[] = [
     status: "Em Andamento",
     extra: true,
     contentExtra: "SFMusDom-eo",
+    volume: [{
+      number: 1,
+      chapter: [{ 
+        id: 0,
+        number: 0,
+        title: "Ilustrações",
+        release: "14/01/2021",
+      },{
+        id: 1,
+        number: 1,
+        title: "País dos Magos",
+        release: "14/01/2021",
+      },{
+        id: 2,
+        number: 2,
+        title: "Uma Menina tão Doce Quanto Flores",
+        release: "14/01/2021",
+      },{
+        id: 3,
+        number: 3,
+        title: "Na Estrada: O Conto de Um Homem Musculoso em Busca de Sua Irmãzinha",
+        release: "14/01/2021",
+      },{
+        id: 4,
+        number: 4,
+        title: "Captação de Recursos",
+        release: "14/01/2021",
+      },{
+        id: 5,
+        number: 5,
+        title: "Na Estrada: O Conto de Dois Homens que Não Conseguiram Resolver uma Discussão",
+        release: "14/01/2021",
+      },
+      ]
+    },
+  ]
   },
   {
     id: 14,
@@ -77,6 +125,78 @@ export const NovelData: NovelDataProps[] = [
     extra: true,
     contentExtra: "L9RDSB7LrEI",
     banner: bannerElaina,
+    view: true,
+    volume: [{
+      number: 1,
+      chapter: [{ 
+        id: 0,
+        number: 0,
+        title: "Ilustrações",
+        release: "14/01/2021",
+      },{
+        id: 1,
+        number: 1,
+        title: "País dos Magos",
+        release: "14/01/2021",
+      },{
+        id: 2,
+        number: 2,
+        title: "Uma Menina tão Doce Quanto Flores",
+        release: "14/01/2021",
+      },{
+        id: 3,
+        number: 3,
+        title: "Na Estrada: O Conto de Um Homem Musculoso em Busca de Sua Irmãzinha",
+        release: "14/01/2021",
+      },{
+        id: 4,
+        number: 4,
+        title: "Captação de Recursos",
+        release: "14/01/2021",
+      },{
+        id: 5,
+        number: 5,
+        title: "Na Estrada: O Conto de Dois Homens que Não Conseguiram Resolver uma Discussão",
+        release: "14/01/2021",
+      },
+      ]
+    },
+    {
+      number: 2,
+      chapter: [{ 
+        id: 0,
+        number: 0,
+        title: "Ilustrações",
+        release: "14/01/2021",
+      },{
+        id: 1,
+        number: 1,
+        title: "País dos Magos",
+        release: "14/01/2021",
+      },{
+        id: 2,
+        number: 2,
+        title: "Uma Menina tão Doce Quanto Flores",
+        release: "14/01/2021",
+      },{
+        id: 3,
+        number: 3,
+        title: "Na Estrada: O Conto de Um Homem Musculoso em Busca de Sua Irmãzinha",
+        release: "14/01/2021",
+      },{
+        id: 4,
+        number: 4,
+        title: "Captação de Recursos",
+        release: "14/01/2021",
+      },{
+        id: 5,
+        number: 5,
+        title: "Na Estrada: O Conto de Dois Homens que Não Conseguiram Resolver uma Discussão",
+        release: "14/01/2021",
+      },
+      ]
+    },
+  ]
   },
   {
     id: 15,
@@ -99,6 +219,42 @@ export const NovelData: NovelDataProps[] = [
     status: "Em Andamento",
     extra: true,
     contentExtra: "Qx01pn9l-6g",
+    volume: [{
+      number: 1,
+      chapter: [{ 
+        id: 0,
+        number: 0,
+        title: "Ilustrações",
+        release: "14/01/2021",
+      },{
+        id: 1,
+        number: 1,
+        title: "País dos Magos",
+        release: "14/01/2021",
+      },{
+        id: 2,
+        number: 2,
+        title: "Uma Menina tão Doce Quanto Flores",
+        release: "14/01/2021",
+      },{
+        id: 3,
+        number: 3,
+        title: "Na Estrada: O Conto de Um Homem Musculoso em Busca de Sua Irmãzinha",
+        release: "14/01/2021",
+      },{
+        id: 4,
+        number: 4,
+        title: "Captação de Recursos",
+        release: "14/01/2021",
+      },{
+        id: 5,
+        number: 5,
+        title: "Na Estrada: O Conto de Dois Homens que Não Conseguiram Resolver uma Discussão",
+        release: "14/01/2021",
+      },
+      ]
+    },
+  ]
   },
   {
     id: 16,
@@ -123,5 +279,41 @@ export const NovelData: NovelDataProps[] = [
     status: "Em Andamento",
     extra: true,
     contentExtra: "46hN_ol_g7I",
+    volume: [{
+      number: 1,
+      chapter: [{ 
+        id: 0,
+        number: 0,
+        title: "Ilustrações",
+        release: "14/01/2021",
+      },{
+        id: 1,
+        number: 1,
+        title: "País dos Magos",
+        release: "14/01/2021",
+      },{
+        id: 2,
+        number: 2,
+        title: "Uma Menina tão Doce Quanto Flores",
+        release: "14/01/2021",
+      },{
+        id: 3,
+        number: 3,
+        title: "Na Estrada: O Conto de Um Homem Musculoso em Busca de Sua Irmãzinha",
+        release: "14/01/2021",
+      },{
+        id: 4,
+        number: 4,
+        title: "Captação de Recursos",
+        release: "14/01/2021",
+      },{
+        id: 5,
+        number: 5,
+        title: "Na Estrada: O Conto de Dois Homens que Não Conseguiram Resolver uma Discussão",
+        release: "14/01/2021",
+      },
+      ]
+    },
+  ]
   },
 ]

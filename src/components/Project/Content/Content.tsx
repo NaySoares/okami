@@ -82,6 +82,34 @@ export function Content({currentId} : currentProps){
         </div>
       </section>
 
+      <section className="chapter">
+        {currentWork[0].view ?
+          <>
+            <h2>Capítulos</h2>
+            {currentWork[0].volume.map((obj => {
+              return(
+                <div key={obj.number}>
+                  <h3>Volume {obj.number}</h3>
+                  <div className="chapterList">
+                  {obj.chapter.map((item =>{
+                    return( 
+                        <div className="chapterItem" key={item.id}>
+                          <p>Cap. {item.number} - {item.title}</p>
+                          <p>{item.release}</p>
+                        </div>
+                    )
+                  }))}
+                  </div>
+                </div>
+              )
+            }))}
+          </> :
+          <h2>Lançamentos em Breve...</h2>
+        }
+      </section>
+
     </main>
   )
 }
+
+//{currentWork[0].chapter?.map((obj => {
