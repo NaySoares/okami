@@ -97,7 +97,7 @@ export function Content({ currentId }: currentProps) {
             <h2>Capítulos</h2>
             {currentWork[0].volume.map((item) => {
               return (
-                <Dropdown
+                <Dropdown key={item.number}
                   volume={item.number}
                   content={item.chapter}
                   currentURL={currentWork[0].id}

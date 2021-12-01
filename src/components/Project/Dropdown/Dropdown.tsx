@@ -19,7 +19,7 @@ export function Dropdown({ volume, content, currentURL}: DropdownProps) {
   const [dropDownOpen, setDropDownOpen] = useState(true);
   const navigate = useNavigate();
   const nav = (id: number) => {
-    navigate(`/projeto/${currentURL}/${volume}/${id}`);
+    navigate(`/project/${currentURL}/${volume}/${id}`);
   };
 
   return (
@@ -37,7 +37,11 @@ export function Dropdown({ volume, content, currentURL}: DropdownProps) {
         <div className={dropDownOpen ? "chapterList" : "chapterList open"}>
           {content.map((chapter) => {
             return (
-              <div className="chapterItem" onClick={() => nav(chapter.id)}>
+              <div
+                className="chapterItem"
+                onClick={() => nav(chapter.id)}
+                key={chapter.id}
+              >
                 <p>
                   Cap.{" "}
                   {chapter.number < 9
