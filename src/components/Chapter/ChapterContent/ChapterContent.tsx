@@ -1,6 +1,14 @@
 import './ChapterContent.scss';
 
-export function ChapterContent() {
+interface ChapterContentProps{
+  theLast: boolean;
+  theFirst: boolean;
+  goPrev: () => void;
+  goNext: () => void;
+  goMenu: () => void;
+}
+
+export function ChapterContent({ theLast, theFirst, goPrev, goNext, goMenu} : ChapterContentProps) {
   const nextChapter = "Próximo >"
   const prevChapter = "< Anterior"
 
@@ -97,8 +105,16 @@ export function ChapterContent() {
           <strong>-</strong>
         </div>
         <div className="chapterContentControllerChapter">
-          <strong>{prevChapter}</strong>
-          <strong>{nextChapter}</strong>
+          {theFirst ? 
+            <strong onClick={goMenu}>Retornar ao menu</strong>
+          : 
+            <strong onClick={goPrev}>{prevChapter}</strong>
+          }
+          {theLast ? 
+            <strong onClick={goMenu}>Retornar ao menu</strong>
+          :
+            <strong onClick={goNext}>{nextChapter}</strong>
+          } 
         </div>
       </section>
       <span dangerouslySetInnerHTML={{__html: contentChapter}}></span>
