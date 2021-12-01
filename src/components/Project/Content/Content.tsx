@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router";
 import { NovelData } from "../../../services/NovelData";
 import { Dropdown } from "../Dropdown/Dropdown";
@@ -8,12 +7,7 @@ interface currentProps {
   currentId: number;
 }
 
-interface StatusDropDownProps {
-  [key: number]: boolean;
-}
-
 export function Content({ currentId }: currentProps) {
-  const [dropDownOpen, setDropDownOpen] = useState(true);
 
   const currentWork = NovelData.filter((obj) => obj.id === currentId);
   var genreWork = "";

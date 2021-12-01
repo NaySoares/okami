@@ -42,8 +42,14 @@
 .asideStaff{
   margin-bottom: 30px;
   h2{
+    color: var(--dk-title);
     margin-bottom: 10px;
   } 
+}
+.asideStaff:hover{
+  h2{
+    color: var(--dk-button);
+  }
 }
 .asideStaffContent{
   padding: 10px;
@@ -51,6 +57,7 @@
   border-radius: 13px;
   width: 270px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 .member{
   display: flex;
