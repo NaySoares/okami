@@ -6,6 +6,7 @@ import "./Dropdown.scss";
 interface DropdownProps {
   volume: number;
   content: ChapterProps[];
+  currentURL: number;
 }
 interface ChapterProps {
   id: number;
@@ -14,11 +15,11 @@ interface ChapterProps {
   release: string;
 }
 
-export function Dropdown({ volume, content }: DropdownProps) {
+export function Dropdown({ volume, content, currentURL}: DropdownProps) {
   const [dropDownOpen, setDropDownOpen] = useState(true);
   const navigate = useNavigate();
   const nav = (id: number) => {
-    navigate("/");
+    navigate(`/projeto/${currentURL}/${volume}/${id}`);
   };
 
   return (

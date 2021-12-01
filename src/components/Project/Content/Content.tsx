@@ -100,6 +100,7 @@ export function Content({ currentId }: currentProps) {
                 <Dropdown
                   volume={item.number}
                   content={item.chapter}
+                  currentURL={currentWork[0].id}
                 />
               );
             })}
