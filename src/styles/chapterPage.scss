@@ -1,0 +1,23 @@
+.chapterPageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.chapterPageContent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+@media (max-width: 1300px) {
+  
+}
