@@ -1,10 +1,10 @@
 import React from 'react';
-import { Slider } from '../components/Slider/Slider';
-import { NovelRelease } from '../components/NovelRelease/NovelRelease';
-import { DynamicCard } from '../components/TopPost/DynamicCard';
-import { CardPost } from '../components/CardPost/CardPost';
-import { NovelList } from '../components/NovelList/NovelList';
-import { CardPartner } from '../components/CardPartner/CardPartner';
+import { Slider } from '../components/Home/Slider/Slider';
+import { NovelRelease } from '../components/Home/NovelRelease/NovelRelease';
+import { DynamicCard } from '../components/Home/TopPost/DynamicCard';
+import { CardPost } from '../components/Home/CardPost/CardPost';
+import { NovelList } from '../components/Home/NovelList/NovelList';
+import { CardPartner } from '../components/Home/CardPartner/CardPartner';
 
 import '../styles/home.scss';
 export function Home() {

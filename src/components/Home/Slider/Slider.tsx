@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { SliderData } from '../../services/SliderData';
-import { ButtonNav } from '../ButtonNav/ButtonNav';
+import { SliderData } from '../../../services/SliderData';
+import { ButtonNav } from '../../ButtonNav/ButtonNav';
 
 import './slider.scss'
 

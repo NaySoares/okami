@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NovelReleaseData } from '../../services/NovelaRealeaseData';
+import { NovelReleaseData } from '../../../services/NovelaRealeaseData';
 import './NovelRelease.scss'
 
 const nav = (id: number) => {

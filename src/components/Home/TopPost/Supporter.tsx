@@ -1,5 +1,5 @@
-import { SupporterData } from '../../services/SupporterData';
-import { RandomAvatar } from '../../services/RandomAvatar';
+import { SupporterData } from '../../../services/SupporterData';
+import { RandomAvatar } from '../../../services/RandomAvatar';
 import './Supporter.scss'
 
 const nav = () => {

@@ -1,4 +1,4 @@
-import { TopPostData } from '../../services/TopPostData';
+import { TopPostData } from '../../../services/TopPostData';
 import './TopPost.scss'
 
 const nav = (id: number) => {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { RandomAvatar } from '../../services/RandomAvatar'
-import { ButtonNav } from '../ButtonNav/ButtonNav';
+import { RandomAvatar } from '../../../services/RandomAvatar'
+import { ButtonNav } from '../../ButtonNav/ButtonNav';
 
-import { TopPostData } from '../../services/TopPostData';
+import { TopPostData } from '../../../services/TopPostData';
 import './CardPost.scss'
 
 export function CardPost() {
@@ -50,7 +50,7 @@ export function CardPost() {
   return(
     <div className="cardPostContainer">
       <header>
-        <h2>Blog Tsun</h2>
+        <h2>Blog Okami</h2>
         <a href='#foo'>
           <strong>{textButton}</strong>
         </a>

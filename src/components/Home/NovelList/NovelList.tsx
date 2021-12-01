@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { ButtonNav } from '../ButtonNav/ButtonNav';
-import { NovelData } from '../../services/NovelData';
+import { ButtonNav } from '../../ButtonNav/ButtonNav';
+import { NovelData } from '../../../services/NovelData';
 import './NovelList.scss'
 
 export function NovelList() {

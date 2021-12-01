@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PartnerData } from '../../services/PartnerData';
+import { PartnerData } from '../../../services/PartnerData';
 import './CardPartner.scss'
 
 export function CardPartner() {
