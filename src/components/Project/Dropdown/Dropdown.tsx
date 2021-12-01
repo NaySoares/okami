@@ -20,6 +20,7 @@ export function Dropdown({ volume, content }: DropdownProps) {
   const nav = (id: number) => {
     navigate("/");
   };
+
   return (
     <main className="dropdownContainer">
       <div className="chapterListAncor">
@@ -27,10 +28,9 @@ export function Dropdown({ volume, content }: DropdownProps) {
           className={
             dropDownOpen ? "chapterHeaderVol" : "chapterHeaderVol open"
           }
+          onClick={() => setDropDownOpen(!dropDownOpen)}
         >
-          <h3 onClick={() => setDropDownOpen(!dropDownOpen)}>
-            Volume {volume}
-          </h3>
+          <h3>Volume {volume}</h3>
           <img src={ArrowBottom} alt="Seta dropdown" />
         </div>
         <div className={dropDownOpen ? "chapterList" : "chapterList open"}>
@@ -41,7 +41,7 @@ export function Dropdown({ volume, content }: DropdownProps) {
                   Cap.{" "}
                   {chapter.number < 9
                     ? `0${chapter.number}`
-                    : `0${chapter.number}`}{" "}
+                    : `${chapter.number}`}{" "}
                   - {chapter.title}
                 </p>
                 <p>{chapter.release}</p>

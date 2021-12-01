@@ -10,9 +10,6 @@
     cursor: pointer;
     color: var(--dk-title);
   }
-  h3:hover {
-    color: var(--dk-button);
-  }
 }
 .chapterListAncor {
   position: relative;
@@ -28,6 +25,12 @@
     margin-bottom: 10px;
     margin-left: 10px;
     transition: all 0.5s ease;
+    cursor: pointer;
+  }
+}
+.chapterHeaderVol:hover{
+  h3{
+    color: var(--dk-button);
   }
 }
 
@@ -61,7 +64,6 @@
     margin-right: auto;
   }
 }
-
 .chapterItem {
   display: flex;
   flex-direction: row;

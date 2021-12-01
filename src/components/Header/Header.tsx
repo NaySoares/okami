@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import menuDark from "../../assets/icons/iconMenuDark.svg";
-//import menuLight from "../../assets/icons/iconMenuLight.svg";
+import menuLight from "../../assets/icons/iconMenuLight.svg";
 import searchDark from "../../assets/icons/iconSearchLight.svg";
 import userLoginDark from "../../assets/icons/iconUserLoginDark.svg";
 //import closeDark from "../../assets/icons/iconCloseDark.svg";
@@ -10,14 +10,18 @@ import "./header.scss";
 
 export function Header() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [userLogged, setUserLogged] = useState(true);
+  const [userLogged, setUserLogged] = useState(false);
   const [activeMenu, setActiveMenu] = useState(-700);
+  const [theme, setTheme] = useState(false);
 
   const navigate = useNavigate();
-
   const nav = () => {
     navigate("/");
   };
+
+  const changeTheme = () => {
+    setTheme(!theme);
+  }
 
   const openModal = () => {
     activeMenu === -700 ? setActiveMenu(0) : setActiveMenu(-700);
@@ -54,7 +58,10 @@ export function Header() {
         <h2>Novels</h2>
       </button>
       <button className="btnHeaderMenu">
-        <img src={menuDark} alt="Icone menu" onClick={() => openModal()} />
+        <img
+          src={menuDark}
+          alt="Icone menu"
+          onClick={() => openModal()} />
       </button>
 
       <label className="inputGroup">
@@ -65,8 +72,14 @@ export function Header() {
       </label>
 
       <div className="headerInfoUser">
-        <button className="btnHeaderTheme">
-          <img className="headerTheme" src={themeDark} alt="Icone tema" />
+        <button
+          className="btnHeaderTheme"
+          onClick={() => changeTheme()}
+        >
+          <img
+            className="headerTheme"
+            src={theme ? menuLight : themeDark}
+            alt="Icone tema" />
         </button>
         {userLogged ? (
           <>
