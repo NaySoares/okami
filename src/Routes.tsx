@@ -10,7 +10,7 @@ export function Routers() {
         <Route path="/" element={<Home />} />
         <Route path="/project/:id" element={<Project />} />
         <Route path="/project" element={<NotFound />} />
-        <Route path="/chapterPage/:id/:volume/:chapterId" element={<ChapterPage />} />
+        <Route path="/project/:id/:volume/:chapterId" element={<ChapterPage />} />
         <Route path="/404" element={<NotFound />} />
       </Routes>
   );
