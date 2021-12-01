@@ -34,7 +34,7 @@ export function AsideInfo({currentId} : currentProps){
         <div className="asideStaffContent">
           {StaffData.slice(0, randomNumber).map((obj => {
             return(
-            <div className="member">
+            <div className="member" key={obj.id}>
               <RandomAvatar />
               <div className="memberInfo">
                 <strong>{obj.nick}</strong>

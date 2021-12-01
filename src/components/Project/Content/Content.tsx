@@ -1,32 +1,47 @@
-import { NovelData } from '../../../services/NovelData';
-import './Content.scss';
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import { NovelData } from "../../../services/NovelData";
+import { Dropdown } from "../Dropdown/Dropdown";
+import "./Content.scss";
 
-interface currentProps{
-  currentId: number
+interface currentProps {
+  currentId: number;
 }
-export function Content({currentId} : currentProps){
+
+interface StatusDropDownProps {
+  [key: number]: boolean;
+}
+
+export function Content({ currentId }: currentProps) {
+  const [dropDownOpen, setDropDownOpen] = useState(true);
 
   const currentWork = NovelData.filter((obj) => obj.id === currentId);
-  var genreWork = '';
-  var nameAlternative = '';
-  
-  for(var i = 0; i < currentWork[0].genre.length; i++){
-    if(i+1 === currentWork[0].genre.length) {
+  var genreWork = "";
+  var nameAlternative = "";
+
+  const navigate = useNavigate();
+
+  const nav = (id: number) => {
+    navigate("/");
+  };
+
+  for (var i = 0; i < currentWork[0].genre.length; i++) {
+    if (i + 1 === currentWork[0].genre.length) {
       genreWork += `${currentWork[0].genre[i]}.`;
     } else {
       genreWork += `${currentWork[0].genre[i]}, `;
     }
   }
-  for(var j = 0; j < currentWork[0].titleAlternative.length; j++){
-    if(j+1 === currentWork[0].titleAlternative.length) {
+  for (var j = 0; j < currentWork[0].titleAlternative.length; j++) {
+    if (j + 1 === currentWork[0].titleAlternative.length) {
       nameAlternative += `${currentWork[0].titleAlternative[j]}.`;
     } else {
       nameAlternative += `${currentWork[0].titleAlternative[j]}, `;
     }
   }
 
-  const buttonText = "Ver Completo >"
-  return(
+  const buttonText = "Ver Completo >";
+  return (
     <main className="contentContainer">
       <section className="infoMain">
         <h2>{currentWork[0].title}</h2>
@@ -71,45 +86,34 @@ export function Content({currentId} : currentProps){
       </section>
 
       <section className="infoResume">
-      <h2>Sinopse</h2>
+        <h2>Sinopse</h2>
         <div className="subinfoResume">
           <div className="subInfoResume">
-            <span dangerouslySetInnerHTML={{__html: currentWork[0].description }}></span>
-            <button type="button">
-              {buttonText}
-            </button>
+            <span
+              dangerouslySetInnerHTML={{ __html: currentWork[0].description }}
+            ></span>
+            <button type="button">{buttonText}</button>
           </div>
         </div>
       </section>
 
       <section className="chapter">
-        {currentWork[0].view ?
+        {currentWork[0].view ? (
           <>
             <h2>Capítulos</h2>
-            {currentWork[0].volume.map((obj => {
-              return(
-                <div key={obj.number}>
-                  <h3>Volume {obj.number}</h3>
-                  <div className="chapterList">
-                  {obj.chapter.map((item =>{
-                    return( 
-                        <div className="chapterItem" key={item.id}>
-                          <p>Cap. {item.number} - {item.title}</p>
-                          <p>{item.release}</p>
-                        </div>
-                    )
-                  }))}
-                  </div>
-                </div>
-              )
-            }))}
-          </> :
+            {currentWork[0].volume.map((item) => {
+              return (
+                <Dropdown
+                  volume={item.number}
+                  content={item.chapter}
+                />
+              );
+            })}
+          </>
+        ) : (
           <h2>Lançamentos em Breve...</h2>
-        }
+        )}
       </section>
-
     </main>
-  )
+  );
 }
-
-//{currentWork[0].chapter?.map((obj => {
