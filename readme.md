@@ -45,7 +45,7 @@ Consumindo informações fakes para simular o back-end.
 	- [ ] Aviso/Página de erro
 
 <section align="center"> 
-<img alt="Telzir" src="https://github.com/NaySoares/okami/blob/main/src/assets/okami1.jpg?raw=true" width = "600px" />
+<img alt="Telzir" src="https://github.com/NaySoares/okami/blob/main/src/assets/okami1.jpg?raw=true" width = "500px" />
 <img alt="Okami"
-src= "https://github.com/NaySoares/okami/blob/main/src/assets/okami2.jpg?raw=true" width = "600px" />
+src= "https://github.com/NaySoares/okami/blob/main/src/assets/okami2.jpg?raw=true" width = "500px" />
 </section>
