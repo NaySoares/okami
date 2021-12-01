@@ -2,7 +2,10 @@ import cover01 from "../assets/images/coverMatadorGoblinsV7.jpg";
 import cover02 from "../assets/images/coverBruxaErranteV6.jpg";
 import cover03 from "../assets/images/coverMushokuTenseiV14.jpg";
 import cover04 from "../assets/images/coverCronicasBehamutV9.jpg";
-import bannerElaina from '../assets/banner/bannerMajoNoTabitabi.png'
+import bannerElaina from '../assets/banner/bannerMajoNoTabitabi.png';
+import bannerMatador from '../assets/banner/bannerMatadordeGoblins.jpg';
+import bannerMushoku from '../assets/banner/bannerMushoku.jpg';
+import bannerBehamut from '../assets/banner/bannerBehamut.jpg';
 
 interface NovelDataProps {
   id: number;
@@ -26,6 +29,7 @@ interface NovelDataProps {
   banner?: string;
   view?: boolean;
   volume: VolumeProps[];
+  anime?: AnimeProps;
 }
 interface ChapterProps{
   id: number,
@@ -36,6 +40,11 @@ interface ChapterProps{
 interface VolumeProps{
   number: number,
   chapter: ChapterProps[];
+}
+interface AnimeProps{
+  status: boolean,
+  chapter?: number;
+  volume?: number;
 }
 
 export const NovelData: NovelDataProps[] = [
@@ -63,6 +72,7 @@ export const NovelData: NovelDataProps[] = [
     status: "Em Andamento",
     extra: true,
     contentExtra: "SFMusDom-eo",
+    banner: bannerMatador,
     volume: [{
       number: 1,
       chapter: [{ 
@@ -126,6 +136,11 @@ export const NovelData: NovelDataProps[] = [
     contentExtra: "L9RDSB7LrEI",
     banner: bannerElaina,
     view: true,
+    anime: {
+      status: true,
+      volume: 1,
+      chapter: 5
+    },
     volume: [{
       number: 1,
       chapter: [{ 
@@ -157,6 +172,56 @@ export const NovelData: NovelDataProps[] = [
         id: 5,
         number: 5,
         title: "Na Estrada: O Conto de Dois Homens que Não Conseguiram Resolver uma Discussão",
+        release: "14/01/2021",
+      },{
+        id: 6,
+        number: 6,
+        title: "Felicidade Engarrafada",
+        release: "14/01/2021",
+      },{
+        id: 7,
+        number: 7,
+        title: "Antes do Início da Competição",
+        release: "14/01/2021",
+      },{
+        id: 8,
+        number: 8,
+        title: "Na Estrada: O Conto de Dois Homens que Brigaram por Uma Garota",
+        release: "14/01/2021",
+      },{
+        id: 9,
+        number: 9,
+        title: "Bruxa Noviça Elaina",
+        release: "14/01/2021",
+      },{
+        id: 10,
+        number: 10,
+        title: "Uma Morte Suave se Aproxima Lentamente",
+        release: "14/01/2021",
+      },{
+        id: 11,
+        number: 11,
+        title: "O País Que Persegue a Feiura",
+        release: "14/01/2021",
+      },{
+        id: 12,
+        number: 12,
+        title: "A Rainha de um País Vazio",
+        release: "14/01/2021",
+      },{
+        id: 13,
+        number: 13,
+        title: "O início de Uma Jornada",
+        release: "14/01/2021",
+      },{
+        id: 14,
+        number: 14,
+        title: "Celestelia Real",
+        release: "14/01/2021",
+      },{
+        id: 15,
+        number: 15,
+        title: "Posfácio",
         release: "14/01/2021",
       },
       ]
@@ -219,6 +284,7 @@ export const NovelData: NovelDataProps[] = [
     status: "Em Andamento",
     extra: true,
     contentExtra: "Qx01pn9l-6g",
+    banner: bannerMushoku,
     volume: [{
       number: 1,
       chapter: [{ 
@@ -279,6 +345,7 @@ export const NovelData: NovelDataProps[] = [
     status: "Em Andamento",
     extra: true,
     contentExtra: "46hN_ol_g7I",
+    banner: bannerBehamut,
     volume: [{
       number: 1,
       chapter: [{ 
