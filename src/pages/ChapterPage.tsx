@@ -7,12 +7,14 @@ interface NovelProps {
   id: number;
   banner?: string;
   volume: VolumeProps[];
+  title: string;
 }
 interface ChapterProps{
   id: number,
   number: number,
   title: string,
   release: string,
+  content?: string | undefined,
 }
 interface VolumeProps{
   number: number,
@@ -23,7 +25,10 @@ export function ChapterPage() {
   const { id, volume, chapterId }= useParams();
   const currentWork: NovelProps[] = NovelData.filter((obj) => obj.id === Number(id));
   let banner = '';
+
   currentWork[0].banner ? banner = currentWork[0].banner : banner = '';
+  let content = currentWork[0].volume[Number(volume)-1].chapter[Number(chapterId)].content;
+  let titleChapter = currentWork[0].volume[Number(volume)-1].chapter[Number(chapterId)].title;
   
   let isTheLast = true;
   let isTheFirst = true;
@@ -64,6 +69,9 @@ export function ChapterPage() {
           goPrev={goPrevChapter}
           goNext={goNextChapter}
           goMenu={navMenu}
+          content={content}
+          titleNovel={currentWork[0].title}
+          titleChapter={titleChapter}
         />
       </div>
     </main>
