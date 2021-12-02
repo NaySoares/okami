@@ -1,5 +1,5 @@
+import { useEffect, useState } from 'react';
 import './ChapterContent.scss';
-
 interface ChapterContentProps{
   theLast: boolean;
   theFirst: boolean;
@@ -8,7 +8,21 @@ interface ChapterContentProps{
   goMenu: () => void;
 }
 
-export function ChapterContent({ theLast, theFirst, goPrev, goNext, goMenu} : ChapterContentProps) {
+export function ChapterContent({theLast, theFirst, goPrev, goNext, goMenu} : ChapterContentProps) {
+  const [progressBar, setProgressBar] = useState (0)
+
+  const onScroll = () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = ((winScroll / height) * 100);
+    setProgressBar(scrolled);
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   const nextChapter = "Próximo >"
   const prevChapter = "< Anterior"
 
@@ -118,6 +132,7 @@ export function ChapterContent({ theLast, theFirst, goPrev, goNext, goMenu} : Ch
         </div>
       </section>
       <span dangerouslySetInnerHTML={{__html: contentChapter}}></span>
+      <div id="pageProgress" style={{width:`${progressBar}%`}}></div>
     </div>
   )
 }
