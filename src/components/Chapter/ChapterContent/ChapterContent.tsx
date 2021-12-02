@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import MenuClick from "../../MenuClick/MenuClick";
 import "./ChapterContent.scss";
 interface ChapterContentProps {
   theLast: boolean;
@@ -55,9 +56,6 @@ export function ChapterContent({
   const nextChapter = "Próximo >";
   const prevChapter = "< Anterior";
 
-  document.addEventListener("contextmenu", (event) => {
-    event.preventDefault()
-  });
 
   return (
     <div className="chapterContentContainer">
@@ -108,6 +106,7 @@ export function ChapterContent({
       </section>
 
       <div id="pageProgress" style={{ width: `${progressBar}%` }}></div>
+      <MenuClick />
     </div>
   );
 }
