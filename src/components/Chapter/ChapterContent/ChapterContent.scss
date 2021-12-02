@@ -6,6 +6,7 @@
   margin: 0 auto;
   position: relative;
   max-width: 1024px;
+  user-select: none;
 
   span{
     color: var(--dk-reader);
