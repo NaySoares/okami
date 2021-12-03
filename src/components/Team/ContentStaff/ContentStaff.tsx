@@ -1,4 +1,4 @@
-import './ContentStaff.scss'
+import "./ContentStaff.scss";
 
 export function ContentStaff() {
   return (
@@ -14,13 +14,17 @@ export function ContentStaff() {
           leitores possam desfrutar de boas leituras, conheça algumas das
           pessoas que tornam isso possível
         </span>
-        <button>Administrador</button>
+        <button className="buttonStaff categActive">Administrador</button>
         <div className="catergoryStaff">
-          <button>Tradutor</button>
-          <button>Revisor</button>
-          <button>Editor</button>
+          <button className="buttonStaff">Tradutor</button>
+          <button className="buttonStaff">Revisor</button>
+          <button className="buttonStaff">Editor</button>
         </div>
       </header>
+
+      <section className="memberStaff">
+        <div className="cardMember"></div>
+      </section>
     </main>
   );
 }
