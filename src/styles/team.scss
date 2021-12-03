@@ -1,0 +1,28 @@
+main.teamContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1480px;
+  margin: 16px auto 0 auto;
+  padding-right: 24px;
+  padding-left: 24px;
+
+  section.teamStaff{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1300px){
+  main.teamContainer{
+    section.teamStaff{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+  }
+}
