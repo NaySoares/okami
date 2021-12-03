@@ -1,3 +1,4 @@
+import { CardMember } from "../CardMember/CardMember";
 import "./ContentStaff.scss";
 
 export function ContentStaff() {
@@ -21,6 +22,7 @@ export function ContentStaff() {
           <button className="buttonStaff">Editor</button>
         </div>
       </header>
+      <CardMember />
 
       <section className="memberStaff">
         <div className="cardMember"></div>
