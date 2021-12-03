@@ -15,8 +15,8 @@ export function Header() {
   const [theme, setTheme] = useState(false);
 
   const navigate = useNavigate();
-  const nav = () => {
-    navigate("/");
+  const nav = (id:string) => {
+    navigate(`/${id}`);
   };
 
   const changeTheme = () => {
@@ -37,22 +37,14 @@ export function Header() {
           <h2 className="modalMenuClose">x</h2>
         </label>
         <ul>
-          <a href="foo">
-            <li>Light Novel</li>
-          </a>
-          <a href="foo">
-            <li>Blog</li>
-          </a>
-          <a href="foo">
-            <li>Equipe</li>
-          </a>
-          <a href="foo">
-            <li>Apoio</li>
-          </a>
+            <li onClick={() => nav("projectList")}>Light Novel</li>
+            <li onClick={() => nav("postList")}>Blog</li>
+            <li onClick={() => nav("team")}>Equipe</li>
+            <li onClick={() => nav("supporter")}>Apoio</li>
         </ul>
       </div>
 
-      <button className="btnHeaderTitle" onClick={() => nav()}>
+      <button className="btnHeaderTitle" onClick={() => nav("")}>
         <h2>Okami</h2>
         <h2 className="headerDot">.</h2>
         <h2>Novels</h2>

@@ -1,4 +1,4 @@
-div.releaseContainer{
+div.releaseContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -11,38 +11,38 @@ div.releaseContainer{
   background: var(--dk-detail);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 
-  .releaseTitle{
+  .releaseTitle {
     margin-top: 10px;
   }
 
-  div.releaseContent{
+  div.releaseContent {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-top: 15px;
     min-height: 489.375px;
 
-    div.releaseContentRow{
+    div.releaseContentRow {
       display: flex;
       flex-direction: row;
       margin-top: 15px;
       cursor: pointer;
 
-      .releaseImg{
-        width:90px;
-        height:100%;
+      .releaseImg {
+        width: 90px;
+        height: 100%;
         max-height: 120px;
         border-radius: 6px;
       }
 
-      .releaseInfo{
+      .releaseInfo {
         display: flex;
-        flex-direction:column;
+        flex-direction: column;
         margin-left: 15px;
         padding-left: 5px;
         padding-right: 5px;
 
-        .releaseT{
+        .releaseT {
           margin-bottom: 15px;
           font-size: 17px;
         }
@@ -54,37 +54,37 @@ div.releaseContainer{
       }
     }
   }
-  div.releaseContent:first-child{
+  div.releaseContent:first-child {
     margin-top: 0;
   }
 }
 
-@media (max-width: 1270px){
-  .releaseTitle{
+@media (max-width: 1270px) {
+  .releaseTitle {
     font-size: 22px;
   }
 }
-@media (max-width: 1300px){
-  div.releaseContainer{
+@media (max-width: 1300px) {
+  div.releaseContainer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     height: 240px;
     width: 100%;
-    max-width: 870px;  
-    .releaseTitle{
+    max-width: 870px;
+    .releaseTitle {
       margin-bottom: 10px;
     }
-    div.releaseContent{
+    div.releaseContent {
       display: flex;
       flex-direction: row;
       margin: 15px;
       margin-top: 0;
       width: 100%;
       padding: 15px;
-      .releaseInfo{
+      .releaseInfo {
         display: flex;
-        flex-direction:column;
+        flex-direction: column;
         margin-left: 15px;
         margin-right: 15px;
         padding-left: 5px;
@@ -94,17 +94,17 @@ div.releaseContainer{
   }
 }
 
-@media (max-width: 720px){
-  div.releaseContainer{
-    .releaseTitle{
+@media (max-width: 720px) {
+  div.releaseContainer {
+    .releaseTitle {
       margin-bottom: 10px;
     }
-    div.releaseContent{
+    div.releaseContent {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      .releaseWork:last-child{
-        display:none;
+      .releaseWork:last-child {
+        display: none;
       }
     }
   }

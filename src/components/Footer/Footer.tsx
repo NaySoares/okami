@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router';
 import discordDark from '../../assets/icons/iconDiscordDark.svg';
 import facebookDark from '../../assets/icons/iconFacebookDark.svg';
 import twitterDark from '../../assets/icons/iconTwitterDark.svg';
@@ -5,13 +6,19 @@ import twitterDark from '../../assets/icons/iconTwitterDark.svg';
 import './Footer.scss'
 
 export function Footer() {
+
+  const navigate = useNavigate();
+  const nav = (id:string) => {
+    navigate(`/${id}`)
+  } 
+
   return(
     <footer id="foo" className="mainFooter">
       <section className="socialFooter">
         <a href="#foo">
           <img src={discordDark} alt="Icone do Discord" />
         </a>
-        <a href="#foo">
+        <a href="foo">
           <img src={facebookDark} alt="Icone do Facebook" />
         </a>
         <a href="#foo">
@@ -26,7 +33,7 @@ export function Footer() {
           <a href="#foo">Blog</a>
         </li>
         <li>
-          <a href="#foo">Equipe</a>
+          <a href="" onClick={() => nav("team")}>Equipe</a>
         </li>
         <li>
           <a href="#foo">Apoio</a>

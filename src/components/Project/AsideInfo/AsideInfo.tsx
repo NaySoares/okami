@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router';
+import { useNavigate } from "react-router";
 import upload from "../../../assets/icons/iconUploadDark.svg";
 import { RandomAvatar } from "../../../services/RandomAvatar";
 import { StaffData } from "../../../services/StaffData";
@@ -19,8 +19,8 @@ export function AsideInfo({ currentId }: currentProps) {
 
   const navigate = useNavigate();
   const nav = (params: number | string) => {
-    navigate(`/${params}`)
-  }
+    navigate(`/${params}`);
+  };
 
   return (
     <aside className="asideContainer">
@@ -41,7 +41,7 @@ export function AsideInfo({ currentId }: currentProps) {
       )}
       <div className="asideStaff">
         <h2>Equipe</h2>
-        <div className="asideStaffContent" onClick={() => nav("staff")}>
+        <div className="asideStaffContent" onClick={() => nav("team")}>
           {StaffData.slice(0, randomNumber).map((obj) => {
             return (
               <div className="member" key={obj.id}>

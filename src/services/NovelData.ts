@@ -2,12 +2,16 @@ import cover01 from "../assets/images/coverMatadorGoblinsV7.jpg";
 import cover02 from "../assets/images/coverBruxaErranteV6.jpg";
 import cover03 from "../assets/images/coverMushokuTenseiV14.jpg";
 import cover04 from "../assets/images/coverCronicasBehamutV9.jpg";
+import cover05 from "../assets/images/coverSuaHistoria.jpg";
 import bannerElaina from "../assets/banner/bannerMajoNoTabitabi.png";
 import bannerMatador from "../assets/banner/bannerMatadordeGoblins.jpg";
 import bannerMushoku from "../assets/banner/bannerMushoku.jpg";
 import bannerBehamut from "../assets/banner/bannerBehamut.jpg";
 import bookmarkElaina from "../assets/bookmark/bookmarkMajoNoTabitabi.png";
 import ilustMJV1C1 from "../assets/ilust/MJ-V1-C1-IMG1.jpg";
+import slideMushoku from "../assets/images/carousel-01.jpg";
+import slideElaina from "../assets/images/carousel-02.jpg";
+import slideReZero from "../assets/images/carousel-03.jpg";
 
 interface NovelDataProps {
   id: number;
@@ -32,6 +36,7 @@ interface NovelDataProps {
   view?: boolean;
   volume: VolumeProps[];
   anime?: AnimeProps;
+  slide: SlideProps; 
 }
 interface ChapterProps {
   id: number;
@@ -48,6 +53,11 @@ interface AnimeProps {
   status: boolean;
   chapter?: number;
   volume?: number;
+}
+interface SlideProps{
+  status: boolean;
+  imgSlide: string;
+  messageSlide: string;
 }
 
 const firstParag = '<p style="text-indent: 30px;">'
@@ -93,6 +103,11 @@ export const NovelData: NovelDataProps[] = [
     extra: true,
     contentExtra: "SFMusDom-eo",
     banner: bannerMatador,
+    slide: {
+      status: true,
+      imgSlide: slideReZero,
+      messageSlide: "Com Rem ainda em sono profundo, Subaru busca novas formas de trazer sua tão queria amiga ao normal" 
+    },
     volume: [
       {
         number: 1,
@@ -176,6 +191,11 @@ export const NovelData: NovelDataProps[] = [
       status: true,
       volume: 1,
       chapter: 5,
+    },
+    slide: {
+      status: true,
+      imgSlide: slideElaina,
+      messageSlide: "Elaina continua sua incrível jornada cheia de aventuras e pães, esse é o 6 volume de sua história" 
     },
     volume: [
       {
@@ -816,6 +836,11 @@ ${firstParag}&mdash; Estarei esperando para te ver&hellip; Saya.${endParag}
     extra: true,
     contentExtra: "Qx01pn9l-6g",
     banner: bannerMushoku,
+    slide: {
+      status: true,
+      imgSlide: slideMushoku,
+      messageSlide: "Com o fim da segunda temporada de Mushoku Tensei, não deixe de acompanhar toda a aventura de Rudy na obra original!" 
+    },
     volume: [
       {
         number: 1,
@@ -891,6 +916,11 @@ ${firstParag}&mdash; Estarei esperando para te ver&hellip; Saya.${endParag}
     extra: true,
     contentExtra: "46hN_ol_g7I",
     banner: bannerBehamut,
+    slide: {
+      status: false,
+      imgSlide: '',
+      messageSlide: '' 
+    },
     volume: [
       {
         number: 1,
@@ -931,6 +961,125 @@ ${firstParag}&mdash; Estarei esperando para te ver&hellip; Saya.${endParag}
             number: 5,
             title:
               "Na Estrada: O Conto de Dois Homens que Não Conseguiram Resolver uma Discussão",
+            release: "14/01/2021",
+          },
+        ],
+      },
+    ],
+  },{
+    id: 34,
+    img: cover05,
+    title: "Sua História",
+    titleAlternative: [
+      "Your Story",
+    ],
+    type: "Light Novel",
+    genre: ["Drama", "Psicológico", "Romance", "Seinen"],
+    description: `A história é sobre um homem que se opôs à prática, agora comum, de implantar memórias falsas nas pessoas, mas um dia ele recebe memórias de que possui uma amiga de infância fictícia. Essa felicidade falsa o atormenta, entretanto, para sua surpresa, ele a conhece — uma garota que não deveria existir.`,
+    date: "1 de Maio de 1999",
+    author: "Sugaru Miaki",
+    artist: "Desconhecido",
+    imgAuthor: "https://github.com/NaySoares.png",
+    imgArtist: "https://github.com/NaySoares.png",
+    statusTop: true,
+    currentVol: "Volume 01",
+    currentCap: "Capítulo 12",
+    status: "Finalizada",
+    extra: false,
+    contentExtra: "",
+    banner: cover05,
+    view: true,
+    anime: {
+      status: false,
+      volume: 1,
+      chapter: 5,
+    },
+    slide: {
+      status: false,
+      imgSlide: '',
+      messageSlide: '' 
+    },
+    volume: [
+      {
+        number: 1,
+        chapter: [
+          {
+            id: 0,
+            number: 0,
+            title: "Ilustrações",
+            release: "14/01/2021",
+          },
+          {
+            id: 1,
+            number: 1,
+            title: "Verde Verde",
+            release: "14/01/2021",
+          },
+          {
+            id: 2,
+            number: 2,
+            title: "Firefly’s Light*",
+            release: "14/01/2021",
+          },
+          {
+            id: 3,
+            number: 3,
+            title:
+              "Recall* Parcial",
+            release: "14/01/2021",
+          },
+          {
+            id: 4,
+            number: 4,
+            title: "Completamente em Branco, Claro",
+            release: "14/01/2021",
+          },
+          {
+            id: 5,
+            number: 5,
+            title: "Herói",
+            release: "14/01/2021",
+          },
+          {
+            id: 6,
+            number: 6,
+            title: "Heroína",
+            release: "14/01/2021",
+          },
+          {
+            id: 7,
+            number: 7,
+            title: "Prece",
+            release: "14/01/2021",
+          },
+          {
+            id: 8,
+            number: 8,
+            title: "Reprise",
+            release: "14/01/2021",
+          },
+          {
+            id: 9,
+            number: 9,
+            title: "Contadora de Histórias",
+            release: "14/01/2021",
+          },
+          {
+            id: 10,
+            number: 10,
+            title: "Goroto Encontra Garota",
+            release: "14/01/2021",
+          },
+          {
+            id: 11,
+            number: 11,
+            title: "Sua História",
+            release: "14/01/2021",
+          },
+          {
+            id: 12,
+            number: 12,
+            title: "Minha História",
             release: "14/01/2021",
           },
         ],

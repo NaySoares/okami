@@ -49,7 +49,7 @@ export const TopPostData: TopPostProps[] = [
   {
     id: 6,
     img: cover03,
-    title: "TsunCats: Mushoku Tensei",
+    title: "OkamiCast: Mushoku Tensei",
     type: "Post",
     subtype: "TsunCast",
     description: "Um bate papo com a galera que traduz Moshuko Tensei",

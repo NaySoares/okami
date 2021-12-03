@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router";
 import { NovelData } from "../../../services/NovelData";
 import { Dropdown } from "../Dropdown/Dropdown";
 import "./Content.scss";
@@ -8,16 +7,9 @@ interface currentProps {
 }
 
 export function Content({ currentId }: currentProps) {
-
   const currentWork = NovelData.filter((obj) => obj.id === currentId);
   var genreWork = "";
   var nameAlternative = "";
-
-  const navigate = useNavigate();
-
-  const nav = (id: number) => {
-    navigate("/");
-  };
 
   for (var i = 0; i < currentWork[0].genre.length; i++) {
     if (i + 1 === currentWork[0].genre.length) {
@@ -34,7 +26,6 @@ export function Content({ currentId }: currentProps) {
     }
   }
 
-  const buttonText = "Ver Completo >";
   return (
     <main className="contentContainer">
       <section className="infoMain">
@@ -86,7 +77,6 @@ export function Content({ currentId }: currentProps) {
             <span
               dangerouslySetInnerHTML={{ __html: currentWork[0].description }}
             ></span>
-            <button type="button">{buttonText}</button>
           </div>
         </div>
       </section>
@@ -97,7 +87,8 @@ export function Content({ currentId }: currentProps) {
             <h2>Capítulos</h2>
             {currentWork[0].volume.map((item) => {
               return (
-                <Dropdown key={item.number}
+                <Dropdown
+                  key={item.number}
                   volume={item.number}
                   content={item.chapter}
                   currentURL={currentWork[0].id}
