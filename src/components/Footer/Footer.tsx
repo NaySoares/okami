@@ -33,7 +33,7 @@ export function Footer() {
           <a href="#foo">Blog</a>
         </li>
         <li>
-          <a href="" onClick={() => nav("team")}>Equipe</a>
+          <a href="#" onClick={() => nav("team")}>Equipe</a>
         </li>
         <li>
           <a href="#foo">Apoio</a>
