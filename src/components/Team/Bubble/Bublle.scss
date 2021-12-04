@@ -1,0 +1,103 @@
+.boxSoup{
+  width: 1000px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: float 15s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  position: absolute;
+}
+
+.photo {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border: 5px solid #fafafa;
+  background-color: #f4f4fa;
+  box-shadow: 0 0 0.5rem #babbbc;
+  border-radius: 54% 46% 42% 58% / 60% 58% 42% 40%;
+  animation: wave 6s linear infinite;
+  transition: all 0.7s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.photo:hover{
+  box-shadow: 0 0 2rem var(--dk-title);
+}
+
+img {
+  width: 100%;
+}
+.text {
+  margin-top: 7px;
+  text-align: center;
+}
+h3,
+h6 {
+  font-weight: normal;
+  margin: 3px 0;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+@keyframes float {
+  0% { 
+      top: 800px;
+      opacity: 1;
+  }
+  40%{
+    opacity: 1;
+  }
+  100% { 
+      top: -500px;
+      opacity: 0;
+  }
+}
+@keyframes sideWays {
+  0% {
+      margin-left:0px;
+  }
+  100% {
+      margin-left:60px;
+  }
+}
+@keyframes wave {
+  20%{
+    border-radius: 45% 55% 62% 38% / 53% 51% 49% 47%;
+  }
+  40%{
+    border-radius: 45% 55% 49% 51% / 36% 51% 49% 64%;
+  }
+  60%{
+    border-radius: 60% 40% 57% 43% / 47% 62% 38% 53%;
+  }
+  80%{
+    border-radius: 60% 40% 32% 68% / 38% 36% 64% 62%;
+  }
+}
+// @keyframes animationFrames {
+//   0% {
+//     opacity: 0;
+//     transform: translate(0px, 1500px);
+//   }
+//   60% {
+//     opacity: 1;
+//     transform: translate(0px, -30px);
+//   }
+//   80% {
+//     transform: translate(0px, 10px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translate(0px, 0px);
+//   }
+// }
