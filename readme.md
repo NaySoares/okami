@@ -16,9 +16,9 @@ Consumindo informações fakes para simular o back-end.
 	- [ ] Funções
 	- [ ] Componentes
 - **Equipe**
-	- [ ] Estruturação
-	- [ ] Funções
-	- [ ] Componentes
+	- [x] Estruturação
+	- [x] Funções
+	- [x] Componentes
 - **Novel/Livro**
 	- [x] Estruturação
 	- [ ] Funções
@@ -42,7 +42,7 @@ Consumindo informações fakes para simular o back-end.
 	- [ ] Responsividade
 	- [ ] Temas
 	- [ ] Autenticação
-	- [ ] Aviso/Página de erro
+	- [x] Aviso/Página de erro
 
 <section align="center"> 
 <img alt="Telzir" src="https://github.com/NaySoares/okami/blob/main/src/assets/okami1.jpg?raw=true" width = "700px" />
