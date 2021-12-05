@@ -4,7 +4,7 @@ Site de leitura online com foco em Light Novel, um tipo de livro de origens japo
 
 As imagens no fim do documento refletem o estado atual da aplicação, não necessariamente o estado final ou completo.
 
-## Check-list Front
+<h2>Check-list Front</h2>
 Consumindo informações fakes para simular o back-end.
 
 - **Home**
@@ -48,4 +48,5 @@ Consumindo informações fakes para simular o back-end.
 <img alt="Telzir" src="https://github.com/NaySoares/okami/blob/main/src/assets/okami1.jpg?raw=true" width = "700px" />
 <img alt="Okami"
 src= "https://github.com/NaySoares/okami/blob/main/src/assets/okami2.jpg?raw=true" width = "700px" />
+![cardOkami](https://github.com/NaySoares/okami/blob/main/src/assets/cardOkami.gif?raw=true)
 </section>
