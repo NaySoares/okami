@@ -28,7 +28,7 @@ export const StaffData: StaffData[] = [
     id: 25,
     avatar: "cover",
     nick: "Axios",
-    category: ["Dev"],
+    category: ["Dev", "Editor", "Adm"],
     up: {
       majoNoTabitabi: 8,
     },
@@ -162,7 +162,7 @@ export const StaffData: StaffData[] = [
   {
     id: 33,
     avatar: "cover",
-    nick: "Bloop",
+    nick: "Bloopy",
     category: ["Editor"],
     up: {
       majoNoTabitabi: 9,
@@ -179,7 +179,7 @@ export const StaffData: StaffData[] = [
     id: 34,
     avatar: "cover",
     nick: "Bravo",
-    category: ["Dev"],
+    category: ["Dev", "Adm"],
     up: {
       majoNoTabitabi: 0,
     },
