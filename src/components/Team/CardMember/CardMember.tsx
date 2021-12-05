@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { RandomAvatar } from "../../../services/RandomAvatar";
 import translater from "../../../assets/icons/iconTranslate.png";
 import drawer from "../../../assets/icons/iconDrawing.png";
@@ -10,10 +9,11 @@ import { StaffData } from "../../../services/StaffData";
 import { RandomCoverCard } from "../../../services/RandomAvatar";
 import "./CardMember.scss";
 
+
 interface CardMember {
   categActive: string;
 }
-
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 export function CardMember({ categActive }: CardMember) {
   return (
     <main className="cardMemberContainer">
@@ -47,7 +47,7 @@ export function CardMember({ categActive }: CardMember) {
                           <img src={translater} alt="icone" />
                         </div>
                         <div className="infoMinibox">
-                          <strong>{member.trad ? member.trad : 0}K</strong>
+                          <strong>{member.trad ? ((member.trad)/1000).toFixed(1) : 0}K</strong>
                           <p>Palavras Traduzidas</p>
                         </div>
                       </div>
@@ -56,7 +56,7 @@ export function CardMember({ categActive }: CardMember) {
                           <img src={proofreader} alt="icone" />
                         </div>
                         <div className="infoMinibox">
-                          <strong>{member.proof ? member.proof : 0}K</strong>
+                          <strong>{member.proof ? ((member.proof)/1000).toFixed(1) : 0}K</strong>
                           <p>Palavras Revisadas</p>
                         </div>
                       </div>
@@ -86,7 +86,7 @@ export function CardMember({ categActive }: CardMember) {
                           <img src={coffee} alt="icone" />
                         </div>
                         <div className="infoMinibox">
-                          <strong>{member.dev.coffee}L</strong>
+                          <strong>{(Number(member.dev.coffee)/1000)}L</strong>
                           <p>Litros de Café</p>
                         </div>
                       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { ButtonNav } from '../../ButtonNav/ButtonNav';
 import { NovelData } from '../../../services/NovelData';
@@ -27,7 +27,7 @@ export function NovelList() {
       if(lengthNovel%2 === 0){
         lengthNovel = (lengthNovel/2)-1;
       } else {
-        lengthNovel = ((lengthNovel-1)/2);
+        lengthNovel = ((lengthNovel-1)/2)-1;
       }
     } else {
       lengthNovel = 0;
@@ -67,9 +67,9 @@ export function NovelList() {
       <div className="windowViewNovel" style={{marginLeft: `-${rollNovel}px`}}>
         {NovelData.map((obj => {
           return(
-            <>
+            <div className="overNovel" key={obj.id}>
               {obj.statusTop && 
-                <div className="cardNovelList" key={obj.id} onClick={() => nav(obj.id)}>
+                <div className="cardNovelList" onClick={() => nav(obj.id)}>
                   <img src={obj.img} alt="Imagem do Post" />
                   <footer className="cardNovelListFooter">
                     <h2 className="cardPostTitle">{obj.title}</h2>
@@ -78,7 +78,7 @@ export function NovelList() {
                   </footer>
                 </div>
               }
-            </>
+            </div>
           )
         }))}
       </div>

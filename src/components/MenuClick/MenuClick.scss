@@ -13,14 +13,11 @@
   opacity: 1;
   transition: opacity 0.5s linear;
   li{ 
-    margin-bottom: 4px;
+    margin: 2px;
+    padding: 5px;
   }
   li:hover {
     background: var(--dk-button);
     color:(var(--dk-title))  
   }
-  li:last-child {
-    margin-bottom: 0;
-  }
-
 }

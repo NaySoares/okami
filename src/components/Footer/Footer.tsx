@@ -15,28 +15,28 @@ export function Footer() {
   return(
     <footer id="foo" className="mainFooter">
       <section className="socialFooter">
-        <a href="#foo">
+        <p onClick={() => nav("team")}>
           <img src={discordDark} alt="Icone do Discord" />
-        </a>
-        <a href="foo">
+        </p>
+        <p onClick={() => nav("team")}>
           <img src={facebookDark} alt="Icone do Facebook" />
-        </a>
-        <a href="#foo">
+        </p>
+        <p onClick={() => nav("team")}>
           <img src={twitterDark} alt="Icone do Twitter" />
-        </a>
+        </p>
       </section>
       <ul className="menuFooter">
         <li>
-          <a href="#foo">Light Novel</a>
+          <p onClick={() => nav("team")}>Light Novel</p>
         </li>
         <li>
-          <a href="#foo">Blog</a>
+          <p onClick={() => nav("team")}>Blog</p>
         </li>
         <li>
-          <a href="#" onClick={() => nav("team")}>Equipe</a>
+          <p onClick={() => nav("team")}>Equipe</p>
         </li>
         <li>
-          <a href="#foo">Apoio</a>
+          <p onClick={() => nav("team")}>Apoio</p>
         </li>
       </ul>
       <strong>Copyright © 2021 Okami</strong>

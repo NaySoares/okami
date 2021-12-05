@@ -21,7 +21,7 @@ interface uploadsProps {
   majoNoTabitabi: number;
 }
 
-const randomNumber = Math.floor(Math.random() * 1000);
+const randomNumber = Math.floor(Math.random() * 10000);
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const StaffData: StaffData[] = [
   {

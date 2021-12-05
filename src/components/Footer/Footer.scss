@@ -17,9 +17,10 @@
   margin-bottom: 20px;
   padding: 15px;
 
-  a{
+  p{
     margin-right: 20px;
     margin-left: 20px;
+    cursor: pointer;
   }
 }
 .menuFooter{
@@ -31,6 +32,9 @@
     font-weight: bold;
     font-size: 20px;
     color: var(--dk-bg);
+    p{
+      cursor: pointer;
+    }
   }
 }
 footer strong{
