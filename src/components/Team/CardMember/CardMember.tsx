@@ -1,22 +1,29 @@
+import { useState } from 'react';
 import { RandomAvatar } from "../../../services/RandomAvatar";
 import translater from "../../../assets/icons/iconTranslate.png";
 import drawer from "../../../assets/icons/iconDrawing.png";
 import developer from "../../../assets/icons/iconDeveloper.png";
 import coffee from "../../../assets/icons/iconCoffee.png";
 import proofreader from "../../../assets/icons/iconProofreading.png";
-import cardElaina from "../../../assets/images/cardElaina.jpg";
 
 import { StaffData } from "../../../services/StaffData";
 import { RandomCoverCard } from '../../../services/RandomAvatar';
 import "./CardMember.scss";
 
-export function CardMember() {
+interface CardMember{
+  categActive: string
+}
 
+export function CardMember({categActive}: CardMember) {
   return (
     <main className="cardMemberContainer">
       {StaffData.map((member) => {
         return (
-          <div className="card" key={member.id}>
+          <div className="overCard" key={member.id}>
+            {member.category.includes(categActive) &&
+          
+          <div className="card">
+             
             <div className="cardUp">
               <img src={RandomCoverCard()} alt="background card" className="bgCard" />
               <RandomAvatar />
@@ -29,6 +36,7 @@ export function CardMember() {
                 <p>"</p>
               </div>
             </div>
+            
             <div className="boxHidden">
               <h2>Colaborações</h2>
               <div className="divisor" />
@@ -86,6 +94,8 @@ export function CardMember() {
               )}
             </div>
           </div>
+         }
+        </div>
         );
       })}
     </main>
