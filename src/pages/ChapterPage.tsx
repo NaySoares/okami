@@ -2,6 +2,7 @@ import { useNavigate, useParams } from 'react-router';
 import { NovelData } from '../services/NovelData';
 import { Banner } from '../components/Project/Banner/Banner';
 import { ChapterContent } from '../components/Chapter/ChapterContent/ChapterContent';
+import { ChapterIlust } from '../components/Chapter/ChapterIlust/ChapterIlust';
 import '../styles/chapterPage.scss';
 interface NovelProps {
   id: number;
@@ -63,16 +64,26 @@ export function ChapterPage() {
     <main className="chapterPageContainer">
       <Banner currentBanner={banner} />
       <div className="chapterPageContent">
-        <ChapterContent
-          theFirst={isTheFirst}
-          theLast={isTheLast}
-          goPrev={goPrevChapter}
-          goNext={goNextChapter}
-          goMenu={navMenu}
-          content={content}
-          titleNovel={currentWork[0].title}
-          titleChapter={titleChapter}
-        />
+        {isTheFirst ?
+          <ChapterIlust
+            goNext={goNextChapter}
+            goMenu={navMenu}
+            content={content}
+            titleNovel={currentWork[0].title}
+            titleChapter={titleChapter}
+          />
+        :
+          <ChapterContent
+            theFirst={isTheFirst}
+            theLast={isTheLast}
+            goPrev={goPrevChapter}
+            goNext={goNextChapter}
+            goMenu={navMenu}
+            content={content}
+            titleNovel={currentWork[0].title}
+            titleChapter={titleChapter}
+          />
+        }
       </div>
     </main>
   )
