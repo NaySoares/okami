@@ -23,6 +23,7 @@ export function ChapterIlust({
 }: ChapterIlustProps) {
   const [imageZoom, setImageZoom] = useState(false)
   const [sourceImg, setSourceImg] = useState('')
+  
   const arrImg = [img01, img02, img03, img04, img05];
 
   const imgZoom = (srcImg: string) => {
