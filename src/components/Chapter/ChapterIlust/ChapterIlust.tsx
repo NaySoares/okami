@@ -23,12 +23,17 @@ export function ChapterIlust({
 }: ChapterIlustProps) {
   const [imageZoom, setImageZoom] = useState(false)
   const [sourceImg, setSourceImg] = useState('')
+  const [imgSelected, setImgSelected] = useState(img01)
   
   const arrImg = [img01, img02, img03, img04, img05];
 
   const imgZoom = (srcImg: string) => {
     setSourceImg(srcImg);
     setImageZoom(!imageZoom);
+  }
+
+  const handleSelectedImg = (img: string) => {
+    setImgSelected(img)
   }
 
 
@@ -53,18 +58,18 @@ export function ChapterIlust({
       </section>
       <div className="ChapterIlustBox">
         <div className="IlustBoxAside">
-          <img src={img01} />
-          <img src={img02} />
-          <img src={img03} />
-          <img src={img04} />
-          <img src={img05} />
+          <img src={img01} onClick={() => handleSelectedImg(img01)}/>
+          <img src={img02} onClick={() => handleSelectedImg(img02)}/>
+          <img src={img03} onClick={() => handleSelectedImg(img03)}/>
+          <img src={img04} onClick={() => handleSelectedImg(img04)}/>
+          <img src={img05} onClick={() => handleSelectedImg(img05)}/>
         </div>
 
         <div className="IlustBoxView">
           <img
-          src={img03}
+          src={imgSelected}
           alt="Ilustração"
-          onClick={() => imgZoom(img03)}/>
+          onClick={() => imgZoom(imgSelected)}/>
         </div>
       </div>
     </main>
