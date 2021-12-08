@@ -25,6 +25,7 @@ export function ChapterContent({
   const [progressBar, setProgressBar] = useState(0);
   const [fontSize, setFontSize] = useState(18);
   const [openFloatMenu, setOpenFloatMenu] = useState(false);
+  const [openFloatModal, setOpenFloatModal] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
@@ -54,11 +55,12 @@ export function ChapterContent({
     }
   }
 
-  const nextChapter = "Próximo >";
-  const prevChapter = "< Anterior";
-
   const floatMenu = () => {
     setOpenFloatMenu(!openFloatMenu);
+  }
+
+  const modalOpen = (option: number) => {
+    setOpenFloatModal(!openFloatModal);
   }
 
 
@@ -78,12 +80,12 @@ export function ChapterContent({
           {theFirst ? (
             <strong onClick={goMenu}>Retornar ao menu</strong>
           ) : (
-            <strong onClick={goPrev}>{prevChapter}</strong>
+            <strong onClick={goPrev}>{`Próximo >`}</strong>
           )}
           {theLast ? (
             <strong onClick={goMenu}>Retornar ao menu</strong>
           ) : (
-            <strong onClick={goNext}>{nextChapter}</strong>
+            <strong onClick={goNext}>{`Próximo >`}</strong>
           )}
         </div>
       </section>
@@ -106,30 +108,60 @@ export function ChapterContent({
           {theFirst ? (
             <strong onClick={goMenu}>Retornar ao menu</strong>
           ) : (
-            <strong onClick={goPrev}>{prevChapter}</strong>
+            <strong onClick={goPrev}>{`< Anterior`}</strong>
           )}
           {theLast ? (
             <strong onClick={goMenu}>Retornar ao menu</strong>
           ) : (
-            <strong onClick={goNext}>{nextChapter}</strong>
+            <strong onClick={goNext}>{`Próximo >`}</strong>
           )}
         </div>
       </section>
 
       <div id="pageProgress" style={{ width: `${progressBar}%` }}></div>
+      
+      <section className="floatMenu">
       <div className={openFloatMenu ? "headerFloatMenu" : "headerFloatMenuClose"}>
         <span>Bruxa Errante: A Jornada de Elaina</span>
         <span>Capítulos</span>
       </div>
       
-      <div className={openFloatMenu ? "buttonFloatMenu" : "buttonFloatMenuClose"}>
+      <div className={openFloatMenu || (progressBar >= 99 ) ? "buttonFloatMenu" : "buttonFloatMenuClose"}>
         <span>{`<`}</span>
         <span>Come</span>
         <span>staff</span>
-        <span>Erro</span>
+        <span onClick={() => modalOpen(3)}>Erro</span>
         <span>{`>`}</span>
       </div>
+      </section>
 
+      {openFloatModal &&
+        <div className="modalFloating">
+          <div className="modalFloatingContent">
+            <h2>Encontrou um erro?</h2>
+            <span>
+              Por favor, marque uma opção e descreva brevemente o erro encontrado.
+            </span>
+            <div className="divLabelModalFloatingContent">
+              <label>
+                <input type="checkbox" name="checkError01" id="checkErroContent">
+                </input>
+                Erro na Tradução/Revisão.                
+              </label>
+              <label>
+                <input type="checkbox" name="checkError02" id="checkErroPage" />
+                Erro na Página.
+              </label>
+            </div>
+            <div className="textModalFloatingContent">
+              <textarea name="inputText" id="inputText" cols={30} rows={10}></textarea>  
+              <button type="submit">
+                Enviar!
+              </button>
+            </div>
+          </div>
+        </div>
+      }
       <MenuClick />
     </div>
   );

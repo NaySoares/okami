@@ -1,4 +1,3 @@
-// useContextMenu.js
 import { useEffect, useCallback, useState } from "react";
 
 const useContextMenu = () => {
