@@ -1,4 +1,4 @@
-.chapterContentContainer{
+.chapterContentContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -8,20 +8,20 @@
   max-width: 1024px;
   user-select: none;
 
-  span{
+  span {
     color: var(--dk-reader);
     font-size: 18px;
   }
 }
-::-webkit-scrollbar{ 
-  display: none
-} 
-.chapterContentHeader{
+::-webkit-scrollbar {
+  display: none;
+}
+.chapterContentHeader {
   position: relative;
   top: -100px;
   margin-bottom: 0px;
 }
-.chapterContentNavigation{
+.chapterContentNavigation {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -29,9 +29,9 @@
   width: 100%;
   margin-bottom: 40px;
 }
-.chapterContentControllerSize{
+.chapterContentControllerSize {
   margin-right: auto;
-  strong{
+  strong {
     font-size: 32px;
     margin-right: 10px;
     padding: 10px;
@@ -39,13 +39,13 @@
     cursor: pointer;
     transition: all 0.3s;
   }
-  strong:hover{
+  strong:hover {
     color: var(--dk-button);
   }
 }
-.chapterContentControllerChapter{
+.chapterContentControllerChapter {
   margin-left: auto;
-  strong{
+  strong {
     font-size: 22px;
     margin-left: 10px;
     padding: 10px;
@@ -53,20 +53,20 @@
     cursor: pointer;
     transition: all 0.3s;
   }
-  strong:hover{
+  strong:hover {
     color: var(--dk-button);
   }
 }
-.chapterContentFinish{
+.chapterContentFinish {
   margin-right: auto;
-  strong{
+  strong {
     font-size: 22px;
     padding: 10px;
     color: var(--dk-title);
   }
 }
 
-.chapterContentNavigationFinish{
+.chapterContentNavigationFinish {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -76,10 +76,195 @@
   margin-bottom: 40px;
 }
 
-#pageProgress{
+#pageProgress {
   background-color: var(--dk-button);
   height: 0.2rem;
   position: fixed;
   left: 0;
   bottom: 0;
+}
+
+.sectionFloatMenu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.headerFloatMenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8057598039215687) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  width: 100%;
+  height: 100px;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+  animation: open 0.5s ease;
+  span {
+    color: var(--dk-title);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  span:hover {
+    color: var(--dk-button);
+    cursor: pointer;
+  }
+}
+@keyframes open {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.headerFloatMenuClose {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8057598039215687) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  width: 100%;
+  height: 100px;
+  z-index: 100;
+  position: fixed;
+  top: -100px;
+  left: 0;
+  transition: all 0.5s;
+  animation: close 0.5s ease;
+}
+@keyframes close {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -100px;
+  }
+}
+
+.buttonFloatMenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  align-self: center;
+  background: rgba(0, 0, 0, 0.8057598039215687) 50%;
+  width: 0px;
+  height: 0px;
+  border-radius: 30px;
+  border: 2px solid var(--dk-button);
+  z-index: 100;
+  position: fixed;
+  bottom: 50px;
+  animation: openButton .5s forwards;
+  
+  span {
+    opacity: 0;
+    color: var(--dk-title);
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    animation: visibleOn 1s forwards ease;
+    
+  }
+  span:hover {
+    font-weight: bold;
+    color: var(--dk-button);
+    cursor: pointer;
+  }
+}
+
+@keyframes openButton {
+  0%{
+    width: 0px;
+    height: 0px;
+  }
+  60%{
+    width: 50px;
+    height: 50px;
+  }
+  100%{
+    width: 300px;
+    height: 50px;
+  }
+}
+
+@keyframes visibleOn {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.buttonFloatMenuClose{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  align-self: center;
+  background: rgba(0, 0, 0, 0.8057598039215687) 50%;
+  width: 0px;
+  height: 0px;
+  border-radius: 30px;
+  border: 2px solid var(--dk-button);
+  z-index: 100;
+  position: fixed;
+  bottom: 50px;
+  animation: closeButton .5s forwards;
+  
+  span {
+    opacity: 0;
+    color: var(--dk-title);
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.1s;
+    animation: visibleOff 0.2s forwards ease;
+  }
+}
+
+@keyframes closeButton {
+  0%{
+    width: 300px;
+    height: 50px;
+  }
+  60%{
+    width: 50px;
+    height: 50px;
+  }
+  100%{
+    border: none;
+    width: 0px;
+    height: 0px;
+  }
+}
+
+@keyframes visibleOff {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
 }

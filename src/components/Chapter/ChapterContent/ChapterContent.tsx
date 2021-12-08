@@ -24,6 +24,7 @@ export function ChapterContent({
 }: ChapterContentProps) {
   const [progressBar, setProgressBar] = useState(0);
   const [fontSize, setFontSize] = useState(18);
+  const [openFloatMenu, setOpenFloatMenu] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
@@ -56,6 +57,11 @@ export function ChapterContent({
   const nextChapter = "Próximo >";
   const prevChapter = "< Anterior";
 
+  const floatMenu = () => {
+    setOpenFloatMenu(!openFloatMenu);
+  }
+
+
 
   return (
     <div className="chapterContentContainer">
@@ -81,12 +87,17 @@ export function ChapterContent({
           )}
         </div>
       </section>
-      <span 
-        style={{ fontSize: `${fontSize}px` }}
-        dangerouslySetInnerHTML={{
-          __html: content ? content : "Ops... Algo deu errado.",
-        }}
-      ></span>
+      <section
+        className="sectionFloatMenu"
+        onClick={() => floatMenu()}
+      >
+        <span 
+          style={{ fontSize: `${fontSize}px` }}
+          dangerouslySetInnerHTML={{
+            __html: content ? content : "Ops... Algo deu errado.",
+          }}
+        ></span>
+      </section>
       <section className="chapterContentNavigationFinish">
         <div className="chapterContentFinish">
           <strong>Obrigado por ler até aqui</strong>
@@ -106,6 +117,19 @@ export function ChapterContent({
       </section>
 
       <div id="pageProgress" style={{ width: `${progressBar}%` }}></div>
+      <div className={openFloatMenu ? "headerFloatMenu" : "headerFloatMenuClose"}>
+        <span>Bruxa Errante: A Jornada de Elaina</span>
+        <span>Capítulos</span>
+      </div>
+      
+      <div className={openFloatMenu ? "buttonFloatMenu" : "buttonFloatMenuClose"}>
+        <span>{`<`}</span>
+        <span>Come</span>
+        <span>staff</span>
+        <span>Erro</span>
+        <span>{`>`}</span>
+      </div>
+
       <MenuClick />
     </div>
   );
