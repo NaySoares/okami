@@ -179,16 +179,22 @@
   span {
     opacity: 0;
     color: var(--dk-title);
+    font-size: 26px;
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s;
     animation: visibleOn 1s forwards ease;
-    
   }
   span:hover {
     font-weight: bold;
     color: var(--dk-button);
     cursor: pointer;
+  }
+  img{
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: visibleOn 1s forwards ease;
   }
 }
 
@@ -240,6 +246,13 @@
     color: var(--dk-title);
     cursor: pointer;
     font-weight: bold;
+    transition: all 0.1s;
+    animation: visibleOff 0.2s forwards ease;
+  }
+
+  img{
+    opacity: 0;
+    cursor: pointer;
     transition: all 0.1s;
     animation: visibleOff 0.2s forwards ease;
   }

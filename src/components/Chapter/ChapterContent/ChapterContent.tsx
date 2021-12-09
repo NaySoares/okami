@@ -1,5 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import MenuClick from "../../MenuClick/MenuClick";
+import iconStaff from "../../../assets/icons/iconStaffDark.svg";
+import iconComment from "../../../assets/icons/iconCommentDark.svg";
+import iconErro from "../../../assets/icons/iconErroDark.svg";
+import useIndicatorScroll from "../../../hooks/useIndicatorScroll";
 import "./ChapterContent.scss";
 interface ChapterContentProps {
   theLast: boolean;
@@ -22,24 +26,10 @@ export function ChapterContent({
   goNext,
   goMenu,
 }: ChapterContentProps) {
-  const [progressBar, setProgressBar] = useState(0);
   const [fontSize, setFontSize] = useState(18);
   const [openFloatMenu, setOpenFloatMenu] = useState(false);
   const [openFloatModal, setOpenFloatModal] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const onScroll = () => {
-    const winScroll = document.documentElement.scrollTop;
-    const height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    setProgressBar(scrolled);
-  };
+  const progressBar = useIndicatorScroll();
 
   const changeFontSize = (operator: string) => {
     if (operator === "-") {
@@ -134,9 +124,9 @@ export function ChapterContent({
           }
         >
           <span onClick={() => goPrev()}>{`<`}</span>
-          <span onClick={() => modalOpen(1)}>Come</span>
-          <span onClick={() => modalOpen(2)}>staff</span>
-          <span onClick={() => modalOpen(3)}>Erro</span>
+          <img src={iconComment} alt="" onClick={() => modalOpen(1)} />
+          <img src={iconStaff} alt="" onClick={() => modalOpen(2)} />
+          <img src={iconErro} alt="" onClick={() => modalOpen(3)} />
           <span onClick={() => (theLast ? goMenu() : goNext())}>{`>`}</span>
         </div>
       </section>

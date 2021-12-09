@@ -36,7 +36,6 @@ export function ChapterIlust({
     setImgSelected(img)
   }
 
-
   const nextChapter = "Próximo >";
   return (
     <main className="chapterIlustContainer">
@@ -58,11 +57,11 @@ export function ChapterIlust({
       </section>
       <div className="ChapterIlustBox">
         <div className="IlustBoxAside">
-          <img src={img01} onClick={() => handleSelectedImg(img01)}/>
-          <img src={img02} onClick={() => handleSelectedImg(img02)}/>
-          <img src={img03} onClick={() => handleSelectedImg(img03)}/>
-          <img src={img04} onClick={() => handleSelectedImg(img04)}/>
-          <img src={img05} onClick={() => handleSelectedImg(img05)}/>
+          <img src={img01} alt="" onClick={() => handleSelectedImg(img01)}/>
+          <img src={img02} alt="" onClick={() => handleSelectedImg(img02)}/>
+          <img src={img03} alt="" onClick={() => handleSelectedImg(img03)}/>
+          <img src={img04} alt="" onClick={() => handleSelectedImg(img04)}/>
+          <img src={img05} alt="" onClick={() => handleSelectedImg(img05)}/>
         </div>
 
         <div className="IlustBoxView">
