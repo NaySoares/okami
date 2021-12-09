@@ -4,6 +4,7 @@ import iconStaff from "../../../assets/icons/iconStaffDark.svg";
 import iconComment from "../../../assets/icons/iconCommentDark.svg";
 import iconErro from "../../../assets/icons/iconErroDark.svg";
 import useIndicatorScroll from "../../../hooks/useIndicatorScroll";
+import { PageProgress } from "../../PageProgress/PageProgress";
 import "./ChapterContent.scss";
 interface ChapterContentProps {
   theLast: boolean;
@@ -29,6 +30,8 @@ export function ChapterContent({
   const [fontSize, setFontSize] = useState(18);
   const [openFloatMenu, setOpenFloatMenu] = useState(false);
   const [openFloatModal, setOpenFloatModal] = useState(false);
+  const [openSectionComment, setOpenSectionComment] = useState(false);
+  const [statusButton, setStatusButton] = useState(false);
   const progressBar = useIndicatorScroll();
 
   const changeFontSize = (operator: string) => {
@@ -46,10 +49,23 @@ export function ChapterContent({
   };
 
   const floatMenu = () => {
+    if (openFloatModal) {
+      setOpenFloatModal(!openFloatModal);
+      return;
+    }
     setOpenFloatMenu(!openFloatMenu);
   };
 
-  const modalOpen = (option: number) => {
+  const closeFloatModal = () => {
+    setStatusButton(false);
+    setOpenFloatModal(false);
+  }
+
+  const modalOpen = () => {
+    setOpenFloatModal(!openFloatModal);
+    openFloatMenu && setOpenFloatMenu(!openFloatMenu);
+  };
+  const modalOpenComment = () => {
     setOpenFloatModal(!openFloatModal);
     openFloatMenu && setOpenFloatMenu(!openFloatMenu);
   };
@@ -104,7 +120,36 @@ export function ChapterContent({
         </div>
       </section>
 
-      <div id="pageProgress" style={{ width: `${progressBar}%` }}></div>
+      <PageProgress />
+      <MenuClick />
+      {openSectionComment && (
+        <section className="sectionCommentContainer">
+          <div className="headerSectionComment">
+            <h2>Comentários do Capítulo</h2>
+            <div className="inputArea">
+              <textarea className="textComment" />
+              <button type="submit">Comentar</button>
+            </div>
+            <section className="commentHistory">
+              <div className="boxComment">
+                <div className="headerBoxComment">
+                  <img src="http://github.com/NaySoares.png" alt="" />
+                  <strong>Axios</strong>
+                  <div className="boxVotes">
+                    <strong>up</strong>
+                    <strong>down</strong>
+                    <strong>||</strong>
+                    <strong>9</strong>
+                  </div>
+                </div>
+                <div className="bodyBoxComment">
+                  <span>Comentário escrito aqui</span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+      )}
 
       <section className="floatMenu">
         <div
@@ -124,9 +169,9 @@ export function ChapterContent({
           }
         >
           <span onClick={() => goPrev()}>{`<`}</span>
-          <img src={iconComment} alt="" onClick={() => modalOpen(1)} />
-          <img src={iconStaff} alt="" onClick={() => modalOpen(2)} />
-          <img src={iconErro} alt="" onClick={() => modalOpen(3)} />
+          <img src={iconComment} alt="" onClick={() => modalOpenComment()} />
+          <img src={iconStaff} alt="" onClick={() => modalOpen()} />
+          <img src={iconErro} alt="" onClick={() => modalOpen()} />
           <span onClick={() => (theLast ? goMenu() : goNext())}>{`>`}</span>
         </div>
       </section>
@@ -160,14 +205,17 @@ export function ChapterContent({
                 cols={30}
                 rows={10}
               ></textarea>
-              <button type="submit" onClick={() => modalOpen(3)}>
-                Enviar!
+              <button
+                className={!statusButton ? "send" : "msgComplete"}
+                type="submit"
+                onClick={() => {!statusButton ? setStatusButton(true) : closeFloatModal()}}
+              >
+                {!statusButton ? "Enviar!" : <span>Enviado!</span>}
               </button>
             </div>
           </div>
         </div>
       )}
-      <MenuClick />
     </div>
   );
 }

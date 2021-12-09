@@ -76,14 +76,6 @@
   margin-bottom: 40px;
 }
 
-#pageProgress {
-  background-color: var(--dk-button);
-  height: 0.2rem;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-}
-
 .floatMenu {
   display: flex;
   justify-content: center;
@@ -360,19 +352,77 @@
     resize: none;
   }
 
-  button{
-    padding: 15px 25px;
+  button.send{
+    padding: 10px 55px;
     border: none;
     border-radius: 10px;
     margin-bottom: 10px;
     background: var(--dk-button);
     color: var(--dk-title);
     font-weight: bold;
-    transition: all 0.3s;
+    transition: all 0.6s ease;
   }
   button:hover{
-    filter: brightness(0.7)
+    filter: brightness(0.9)
   }
+  button.msgComplete{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 160px;
+    padding: 2px 2px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    border: 2px solid var(--dk-button);
+    background: transparent;
+    color: var(--dk-title);
+    font-weight: bold;
+    transition: all 0.6s ease;
+    animation: backTransition 2s forwards;
+    overflow: hidden;
+    cursor:default;
+
+    span{ 
+      background: var(--dk-button);
+      align-self: flex-start;
+      border-radius: 30px;
+      animation: loading 2s forwards;
+      font-size: 0.01px;
+      color: transparent;
+    }
+
+    @keyframes loading {
+      10%{
+        width: 0px;
+      }
+      90%{
+        width: 100%;
+        color: transparent;
+        font-size: 0.01px;
+        padding: 7px;
+      }
+      100%{
+        width: 100%;
+        color: var(--dk-title);
+        font-size: 16px;
+        padding: 5px;
+      }
+    }
+  
+    @keyframes backTransition {
+      
+      90%{
+        background: transparent;
+        border-radius: 20px;
+      }
+      100%{
+        border-radius: 10px;
+        background: var(--dk-button);
+      }
+    }
+  }
+  
 }
 
 
