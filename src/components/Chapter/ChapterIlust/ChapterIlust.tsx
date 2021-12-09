@@ -25,7 +25,7 @@ export function ChapterIlust({
   const [sourceImg, setSourceImg] = useState('')
   const [imgSelected, setImgSelected] = useState(img01)
   
-  const arrImg = [img01, img02, img03, img04, img05];
+  //const arrImg = [img01, img02, img03, img04, img05];
 
   const imgZoom = (srcImg: string) => {
     setSourceImg(srcImg);

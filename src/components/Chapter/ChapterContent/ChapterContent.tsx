@@ -41,29 +41,28 @@ export function ChapterContent({
     setProgressBar(scrolled);
   };
 
-  const changeFontSize = ( operator: string ) => {
-    if(operator === "-"){
+  const changeFontSize = (operator: string) => {
+    if (operator === "-") {
       const newFontSize = fontSize - 1;
-        if (newFontSize >= 12){
-          setFontSize(newFontSize);
-        }
-    } else if( operator === "+"){
+      if (newFontSize >= 12) {
+        setFontSize(newFontSize);
+      }
+    } else if (operator === "+") {
       const newFontSize = Number(fontSize) + 1;
-        if(newFontSize <= 26){
-          setFontSize(newFontSize);
-        }
+      if (newFontSize <= 26) {
+        setFontSize(newFontSize);
+      }
     }
-  }
+  };
 
   const floatMenu = () => {
     setOpenFloatMenu(!openFloatMenu);
-  }
+  };
 
   const modalOpen = (option: number) => {
     setOpenFloatModal(!openFloatModal);
-  }
-
-
+    openFloatMenu && setOpenFloatMenu(!openFloatMenu);
+  };
 
   return (
     <div className="chapterContentContainer">
@@ -80,7 +79,7 @@ export function ChapterContent({
           {theFirst ? (
             <strong onClick={goMenu}>Retornar ao menu</strong>
           ) : (
-            <strong onClick={goPrev}>{`Próximo >`}</strong>
+            <strong onClick={goPrev}>{`< Anterior`}</strong>
           )}
           {theLast ? (
             <strong onClick={goMenu}>Retornar ao menu</strong>
@@ -89,11 +88,8 @@ export function ChapterContent({
           )}
         </div>
       </section>
-      <section
-        className="sectionFloatMenu"
-        onClick={() => floatMenu()}
-      >
-        <span 
+      <section className="sectionFloatMenu" onClick={() => floatMenu()}>
+        <span
           style={{ fontSize: `${fontSize}px` }}
           dangerouslySetInnerHTML={{
             __html: content ? content : "Ops... Algo deu errado.",
@@ -119,34 +115,48 @@ export function ChapterContent({
       </section>
 
       <div id="pageProgress" style={{ width: `${progressBar}%` }}></div>
-      
+
       <section className="floatMenu">
-      <div className={openFloatMenu ? "headerFloatMenu" : "headerFloatMenuClose"}>
-        <span>Bruxa Errante: A Jornada de Elaina</span>
-        <span>Capítulos</span>
-      </div>
-      
-      <div className={openFloatMenu || (progressBar >= 99 ) ? "buttonFloatMenu" : "buttonFloatMenuClose"}>
-        <span>{`<`}</span>
-        <span>Come</span>
-        <span>staff</span>
-        <span onClick={() => modalOpen(3)}>Erro</span>
-        <span>{`>`}</span>
-      </div>
+        <div
+          className={openFloatMenu ? "headerFloatMenu" : "headerFloatMenuClose"}
+        >
+          <span onClick={() => goMenu()}>
+            Bruxa Errante: A Jornada de Elaina
+          </span>
+          <span>Capítulos</span>
+        </div>
+
+        <div
+          className={
+            openFloatMenu || progressBar >= 99
+              ? "buttonFloatMenu"
+              : "buttonFloatMenuClose"
+          }
+        >
+          <span onClick={() => goPrev()}>{`<`}</span>
+          <span onClick={() => modalOpen(1)}>Come</span>
+          <span onClick={() => modalOpen(2)}>staff</span>
+          <span onClick={() => modalOpen(3)}>Erro</span>
+          <span onClick={() => (theLast ? goMenu() : goNext())}>{`>`}</span>
+        </div>
       </section>
 
-      {openFloatModal &&
+      {openFloatModal && (
         <div className="modalFloating">
           <div className="modalFloatingContent">
             <h2>Encontrou um erro?</h2>
             <span>
-              Por favor, marque uma opção e descreva brevemente o erro encontrado.
+              Por favor, marque uma opção e descreva brevemente o erro
+              encontrado.
             </span>
             <div className="divLabelModalFloatingContent">
               <label>
-                <input type="checkbox" name="checkError01" id="checkErroContent">
-                </input>
-                Erro na Tradução/Revisão.                
+                <input
+                  type="checkbox"
+                  name="checkError01"
+                  id="checkErroContent"
+                ></input>
+                Erro na Tradução/Revisão.
               </label>
               <label>
                 <input type="checkbox" name="checkError02" id="checkErroPage" />
@@ -154,14 +164,19 @@ export function ChapterContent({
               </label>
             </div>
             <div className="textModalFloatingContent">
-              <textarea name="inputText" id="inputText" cols={30} rows={10}></textarea>  
-              <button type="submit">
+              <textarea
+                name="inputText"
+                id="inputText"
+                cols={30}
+                rows={10}
+              ></textarea>
+              <button type="submit" onClick={() => modalOpen(3)}>
                 Enviar!
               </button>
             </div>
           </div>
         </div>
-      }
+      )}
       <MenuClick />
     </div>
   );

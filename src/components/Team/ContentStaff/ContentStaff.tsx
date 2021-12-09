@@ -114,7 +114,7 @@ export function ContentStaff() {
         <button
           className="buttonStaff"
           onClick={
-            categActive == "Adm"
+            categActive === "Adm"
               ? () => alert(`Calma lá, não é assim que se torna Adm`)
               : () => alert(`Seu teste de ${categActive} será baixado!`)
           }
