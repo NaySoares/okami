@@ -6,16 +6,18 @@
   height: auto;
   margin: 0;
   border-radius: 5px;
-/* use absolute positioning  */
+/* use position absolute  */
   position: absolute;
   list-style: none;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   opacity: 1;
   transition: opacity 0.5s linear;
+  
   li{ 
     margin: 2px;
     padding: 5px;
   }
+  
   li:hover {
     background: var(--dk-button);
     color:(var(--dk-title))  

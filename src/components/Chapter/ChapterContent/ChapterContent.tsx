@@ -50,6 +50,7 @@ export function ChapterContent({
 
   const floatMenu = () => {
     if (openFloatModal) {
+      setStatusButton(false);
       setOpenFloatModal(!openFloatModal);
       return;
     }
@@ -59,7 +60,7 @@ export function ChapterContent({
   const closeFloatModal = () => {
     setStatusButton(false);
     setOpenFloatModal(false);
-  }
+  };
 
   const modalOpen = () => {
     setOpenFloatModal(!openFloatModal);
@@ -208,7 +209,9 @@ export function ChapterContent({
               <button
                 className={!statusButton ? "send" : "msgComplete"}
                 type="submit"
-                onClick={() => {!statusButton ? setStatusButton(true) : closeFloatModal()}}
+                onClick={() => {
+                  !statusButton ? setStatusButton(true) : closeFloatModal();
+                }}
               >
                 {!statusButton ? "Enviar!" : <span>Enviado!</span>}
               </button>
