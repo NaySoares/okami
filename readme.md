@@ -1,52 +1,11 @@
 # Okami.Novels
 
-Site de leitura online com foco em Light Novel, um tipo de livro de origens japonesas.
+An online reading site focused on Light Novel, a type of book with Japanese origins.
 
-As imagens no fim do documento refletem o estado atual da aplicação, não necessariamente o estado final ou completo.
-
-<h2>Check-list Front</h2>
-Consumindo informações fakes para simular o back-end.
-
-- **Home**
-	- [x] Estruturação
-	- [ ] Funções
-	- [x] Componentes
-- **Catálogo**
-	- [ ] Estruturação
-	- [ ] Funções
-	- [ ] Componentes
-- **Equipe**
-	- [x] Estruturação
-	- [x] Funções
-	- [x] Componentes
-- **Novel/Livro**
-	- [x] Estruturação
-	- [ ] Funções
-	- [x] Componentes
-- **Post/Blog**
-	- [ ] Estruturação
-	- [ ] Funções
-	- [ ] Componentes
-- **Parceiros**
-	- [ ] Estruturação
-	- [ ] Funções
-	- [ ] Componentes
-- **Apoio**
-	- [ ] Estruturação
-	- [ ] Funções
-	- [ ] Componentes
-- **Extras**
-	- [x] Header
-	- [x] Footer
-	- [x] Menu Modal
-	- [ ] Responsividade
-	- [ ] Temas
-	- [ ] Autenticação
-	- [x] Aviso/Página de erro
-
+As images of the current state of the application, not the final or complete state.
 <section align="center"> 
-<img alt="Telzir" src="https://github.com/NaySoares/okami/blob/main/src/assets/okami1.jpg?raw=true" width = "400px" />
-<img alt="Okami"
+<img alt="Tela da aplicação" src="https://github.com/NaySoares/okami/blob/main/src/assets/okami1.jpg?raw=true" width = "400px" />
+<img alt="Tela da aplicação"
 src= "https://github.com/NaySoares/okami/blob/main/src/assets/okami2.jpg?raw=true" width = "400px" />
 
 
